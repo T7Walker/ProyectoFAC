@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('zones', function (Blueprint $table) {
             
             $table->id();
-            $table->varchar(45)->NameZone;
-            $table->varchar(45)->MeetingPoint;
+            $table->string('name')->NameZone;
+            $table->string('meetingPoint')->MeetingPoint;
+            $table->foreignId('buses_id')->constrained()->onDelete('cascade');
             $table->tinyInteger('status')->default(0);
             $table->timestamps();
 

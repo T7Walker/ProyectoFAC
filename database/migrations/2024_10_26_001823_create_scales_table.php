@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('scales', function (Blueprint $table) {
             
             $table->id();
-            $table->varchar(45)->NameOfTheScale;
-            $table->int()->map_id;
-            $table->int()->zone_id;
+            $table->string('nameScale')->NameOfTheScale;
+            $table->foreignId('zone_id')->constrained()->onDelete('cascade');
+            $table->foreignId('map_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             
         });

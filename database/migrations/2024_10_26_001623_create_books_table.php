@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('books', function (Blueprint $table) {
             
             $table->id();
-            $table->varchar(100)->Title;
-            $table->string()->UrlOfTheBook;
-            $table->int()->User_id;
+            $table->string('title')->Title;
+            $table->string('bookURL')->UrlOfTheBook;
+            $table->string('description')->Description;
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
 
         });

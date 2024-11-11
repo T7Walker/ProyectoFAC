@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('buses', function (Blueprint $table) {
 
             $table->id();
-            $table->int()->NumberOfTheRoute;
-            $table->varchar(45)->NameOfTheCompany;
+            $table->integer('numberOfTheRoute')->NumberOfTheRoute;
+            $table->varchar('nameCompany')->NameOfTheCompany;
             $table->timestamps();
             
         });

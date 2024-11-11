@@ -18,5 +18,5 @@ use App\Http\Controllers\ScalesController;
 
 
 
-route::get('/Publications/Principal',[PublicationsController::class,'Principal']);
-route::get('/Users/Principal',[UsersController::class,'Principal']);
+route::get('/Publication/principal',[PublicationsController::class,'principal']);
+

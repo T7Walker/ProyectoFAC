@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('maps', function (Blueprint $table) {
            
             $table->id();
-            $table->varchar(45)->NameRoute;
-            $table->varchar(45)->Horary;
-            $table->varchar(200)->DescriptionOfTheRoute;
-            $table->int()->user_id;
+            $table->string('nameRoute')->NameRoute;
+            $table->string('horary')->Horary;
+            $table->string('description')->DescriptionOfTheRoute;
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
 
         });

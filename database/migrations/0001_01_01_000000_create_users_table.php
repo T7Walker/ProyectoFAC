@@ -35,6 +35,16 @@ return new class extends Migration
             $table->longText('payload');
             $table->integer('last_activity')->index();
         });
+
+        Schema::create('users', function (Blueprint $table) {
+           
+            $table->id();
+            $table->string('name')->name;
+            $table->string('email')->email;
+            $table->string('password')->pasword;
+            $table->timestamps();
+            
+        });
     }
 
     /**
