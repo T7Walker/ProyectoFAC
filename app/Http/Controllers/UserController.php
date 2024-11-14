@@ -13,7 +13,7 @@ class UserController extends Controller
 
     }
 
-    public function dataUser (Request $request){
+    public function record (Request $request){
 
         $user= new User();
 

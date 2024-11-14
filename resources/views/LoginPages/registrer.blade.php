@@ -6,8 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="{{ route('loginPages.registrer') }}" method="POST" enctype="multiplart/form-data">
-
+    <form action="{{ route('loginPages.record') }}" method="POST" enctype="multiplart/form-data">
 
     @csrf 
 
@@ -16,9 +15,10 @@
     <br>
     <label>Correo Electronico:</label>
     <input type="text" name="Company">
-    <br><br>
-    <button type="submit">Enviar Formulario</button>
-
+    <br>
+    <label>Contraseña:</label>
+    <input type="text" name="password">
+    <button type="submit">Registrarte</button>
 
     </form>
     
