@@ -16,14 +16,20 @@ use App\Http\Controllers\ZonesController;
 
 use App\Http\Controllers\ScalesController;
 
+//ruta pagina principal junto a 5 ultimas publicaciones
+route::put('/PagesPrincipal',[PublicationsController::class,'principal'])->name('PagePrincipal');
 //ruta de los registros de usuarios
 route::get('/LoginPages/registrer',[UserController::class,'registrer'])->name('LoginPages.registrer');
 //ruta de las publicaciones recientes
-route::get('/PagesPrincipal/principal',[PublicationsController::class,'registrer'])->name('PagesPrincipal.publication');
-//ruta de crear publicaciones
+route::get('/PagesPrincipal/principal',[PublicationsController::class,'principal'])->name('PagesPrincipal.publication');
+//ruta de CRUD publicaciones
+route::get('/Publications/allPublication',[PublicationsController::class,'allPublication'])->name('Publications.allPublication');
 route::get('/Publications/createInfo',[PublicationsController::class,'infoPublication'])->name('Publications.createInfo');
-route::get('/Publications/uploadPost',[PublicationsController::class,'createPublication'])->name('Publications.uploadPost');
-//ruta pagina principal
-route::get('/PagesPrincipal',[PublicationsController::class,'principal'])->name('PagePrincipal');
+route::delete('/Publications/{$id}',[PublicationsController::class,'deletePublication'])->name('Publication.delete');
+route::post('/Publications/{$id}',[PublicationsController::class,'viewPublication'])->name('Publications.viewPublication');
+route::post('/Publications/{$id}/editPublication',[PublicationsController::class,'editPublication'])->name('Publications.edit');
+route::post('/Publications/{$id}',[PublicationsController::class,'updatePublication'])->name('Publications.updatePublication');
+
+
 
 

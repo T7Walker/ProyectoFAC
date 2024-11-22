@@ -22,7 +22,12 @@
     <div>
         <p>Publicaciones</p>
     </div>
-    <h2>Quienes somos?</h2>
+
+    <h2>¡Ultimas publicaciones!</h2>
+
+    <a href=""></a>
+
+    <h3>Quienes somos?</h3>
     <span>
         <div>
             <p>Somos un grupo de programadores los cuales lanzamos
