@@ -21,7 +21,9 @@ route::get('/LoginPages/registrer',[UserController::class,'registrer'])->name('L
 //ruta de las publicaciones recientes
 route::get('/PagesPrincipal/principal',[PublicationsController::class,'registrer'])->name('PagesPrincipal.publication');
 //ruta de crear publicaciones
-route::get('/Publications/createPost',[PublicationsController::class,'infoPublication'])->name('Publications.infoPublication');
-route::get('/Publications/createPost',[PublicationsController::class,'createPublication'])->name('Publications.createPost');
+route::get('/Publications/createInfo',[PublicationsController::class,'infoPublication'])->name('Publications.createInfo');
+route::get('/Publications/uploadPost',[PublicationsController::class,'createPublication'])->name('Publications.uploadPost');
+//ruta pagina principal
+route::get('/PagesPrincipal',[PublicationsController::class,'principal'])->name('PagePrincipal');
 
 

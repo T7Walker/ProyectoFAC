@@ -7,9 +7,11 @@
 </head>
 <body>
 
+@include('PagesPrincipals.navBar')
+
     <h1>Bienvendido</h1>
 
-    <p>{{$user->name}}</p>
+    <p>user</p>
 
     <div>
         <p>Mapa</p>

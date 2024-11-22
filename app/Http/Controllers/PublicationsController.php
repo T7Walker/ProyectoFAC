@@ -11,7 +11,7 @@ class PublicationsController extends Controller
 
     public function principal(){
 
-        return view('PagesPrincipals.Principal');
+        return view('PagesPrincipals.principal');
 
     }
     public function createPublication (){
