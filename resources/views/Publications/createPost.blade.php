@@ -12,11 +12,15 @@
        
         @csrf
         <label>Escribe algo...</label>
+
         <input type="text" name="description">
         <br>
+
         <label>Url de la imagen</label>
+
         <input type="text" name="imageURL">
         <br>
+        
         <button type="submit">Publicar</button>
 
 </body>

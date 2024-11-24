@@ -41,7 +41,9 @@ return new class extends Migration
             $table->id();
             $table->string('name')->name;
             $table->string('email')->email;
-            $table->string('password')->pasword;
+            $table->string('password')->password;
+            $table->string('URLProfileIMG')->URLProfileIMG;
+            $table->timestamp('created_at')->nullable();
             $table->timestamps();
             
         });

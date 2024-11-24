@@ -92,6 +92,11 @@
 .menu-icon:hover {
     color: #27ae60;
 }
+.pageContent{
+
+    margin-top: 80px; padding: 20px;
+
+}
 
 /* Media query for mobile */
 @media (max-width: 768px) {

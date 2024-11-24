@@ -19,9 +19,9 @@
                 <td>{{ $publication->description }}</td>
                 <td>{{ $publication->imageURL}}</td>
                 <td class="actions">
-                    <a href="{{route('publications.view', $publication->id) }}">Mira el post</a>
-                    <a href="{{route('publications.edit', $publication->id) }}">Editalo</a>
-                    <form action="{{ route('publications.delete', $provider->id) }}" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar esta publicacion?');">
+                    <a href="{{route('Publications.viewPublications', $publication->id) }}">Mira el post</a>
+                    <a href="{{route('Publications.editPublications', $publication->id) }}">Editalo</a>
+                    <form action="{{ route('Publications.delete', $publication->id) }}" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar esta publicacion?');">
                         @csrf
                         @method('delete')
                         <button type="submit">Eliminar</button>

@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class PublicationsController extends Controller
 {
+    public function principal(){
+
+        return view("PagesPrincipals.principal");
+
+    }
     public function createPublication (){
 
         return view('Publications.createPost');
@@ -25,7 +30,7 @@ class PublicationsController extends Controller
         return $publication;
     }
 
-    public function principal(){
+    public function principalPublication(){
 
         $publication = Publications::all();
 
@@ -33,10 +38,10 @@ class PublicationsController extends Controller
 
     }
 
-    public function edit($id){
+    public function editPublication($id){
 
         $publication = Publications::find($id);
-        return view('Publications.edit', compact(('publication')));
+        return view('Publications.editPublication', compact(('publication')));
 
     }
 
@@ -46,7 +51,7 @@ class PublicationsController extends Controller
 
         $publication->delete();
 
-        return view('Publications.delete', compact(('publication')));
+        return redirect('')->route('Publications.allPublication');
 
     }
     public function allPublication($id){
@@ -57,7 +62,7 @@ class PublicationsController extends Controller
     public function viewPublication($id){
         
         $publication=Publications::find($id);
-        return view('Publication.viewPublication', compact('publication'));
+        return view('Publications.viewPublication', compact('publication'));
     }
     public function updatePublication(Request $request, $id){
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>NavBar</title>
     @vite([
         // CSS
         'resources/css/navBar.css',
@@ -22,7 +22,7 @@
 
         <!-- Profile Button -->
         <div class="navbar-profile">
-            <img src="https://via.placeholder.com/45" alt="Foto de Perfil">
+            <img src="{{$user->URLProfileIMG}}" alt="Foto de Perfil">
         </div>
 
         <!-- Menu Icon for Mobile -->
@@ -32,7 +32,7 @@
     </nav>
 
     <!-- Page Content -->
-    <div style="margin-top: 80px; padding: 20px;">
+    <div class="pageContent">
         <h1>Bienvenido a la página</h1>
         <p>Este es el contenido principal de la página...</p>
     </div>
