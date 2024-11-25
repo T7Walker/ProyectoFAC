@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registrate</title>
 </head>
 <body>
-    <form action="{{ route('loginPages.record') }}" method="POST" enctype="multiplart/form-data">
+    <form action="{{ route('LoginPages.registrer') }}" method="GET" enctype="multiplart/form-data">
 
     @csrf 
 
@@ -18,6 +18,9 @@
     <br>
     <label>Contraseña:</label>
     <input type="text" name="password">
+    <button type="submit">Registrarte</button>
+    <label>Pon la url de tu foto de Perfil:</label>
+    <input type="text" name="URLProfileIMG">
     <button type="submit">Registrarte</button>
 
     </form>

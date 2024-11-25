@@ -6,12 +6,14 @@
     <title>Document</title>
 </head>
 <body>
+@vite(['resources/css/principal.css'])
 
 @include('PagesPrincipals.navBar')
 
-    <h1>Bienvendido</h1>
+    <h1 class="colorTitulo">Bienvendido</h1>
 
     <p>user</p>
+    <br>
 
     <div>
         <p>Mapa</p>
@@ -22,12 +24,15 @@
     <div>
         <p>Publicaciones</p>
     </div>
+    <br>
 
-    <h2>¡Ultimas publicaciones!</h2>
+    <h2 class="colorTitulo">¡Ultimas publicaciones!</h2>
+    <br>
 
     <a href=""></a>
 
     <h3>Quienes somos?</h3>
+    <br>
     <span>
         <div>
             <p>Somos un grupo de programadores los cuales lanzamos

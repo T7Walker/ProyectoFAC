@@ -9,34 +9,50 @@
         'resources/css/navBar.css',
         ])
 </head>
-<body>
-     <!-- Navbar -->
-     <nav class="navbar">
+
+    <!-- Navbar -->
+    <nav class="navbar">
         <!-- Logo -->
-        <a href="#" class="navbar-logo">MiLogo</a>
+        <a href="#" class="navbar-logo">
+            <img src="{{ asset('storage/logo.png' . session('image')) }}" alt="Logo"> <!-- Ruta local -->
+        </a>
 
         <!-- Search Bar -->
         <div class="navbar-search">
             <input type="text" placeholder="Buscar...">
         </div>
 
-        <!-- Profile Button -->
-        <div class="navbar-profile">
-            <img src="{{$user->URLProfileIMG}}" alt="Foto de Perfil">
-        </div>
-
-        <!-- Menu Icon for Mobile -->
-        <div class="menu-icon">
-            &#9776; <!-- Hamburger icon -->
+        <!-- Profile Section -->
+        <div class="navbar-profile-container" onclick="toggleDropdown()">
+            <div class="navbar-profile">
+                <img src="https://preview.redd.it/kefla-dragon-ball-super-akaicabbage-v0-txgvcnopre0a1.jpg?auto=webp&s=8d0cd6894b7a756079d92b3f378c25d8d830ca99" alt="Foto de Perfil"> <!-- Ruta local -->
+            </div>
+            <div class="profile-dropdown">
+                <a href="#">Mi Perfil</a>
+                <a href="#">Configuración</a>
+                <a href="#">Cerrar Sesión</a>
+            </div>
         </div>
     </nav>
 
     <!-- Page Content -->
-    <div class="pageContent">
-        <h1>Bienvenido a la página</h1>
-        <p>Este es el contenido principal de la página...</p>
+    <div style="margin-top: 80px; padding: 20px;">
     </div>
 
-    
+    <script>
+        function toggleDropdown() {
+            const profileContainer = document.querySelector('.navbar-profile-container');
+            profileContainer.classList.toggle('active');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function (event) {
+            const profileContainer = document.querySelector('.navbar-profile-container');
+            if (!profileContainer.contains(event.target)) {
+                profileContainer.classList.remove('active');
+            }
+        });
+    </script>
+
 </body>
 </html>

@@ -7,11 +7,6 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     
-    public function registrer(){
-
-        return view("LoginPages.registrer");
-
-    }
 
     public function record (Request $request){
 
@@ -25,6 +20,19 @@ class UserController extends Controller
         $user->save();
 
         return $user;
+
+    }
+
+    public function registrer(){
+
+        return view("LoginPages.registrer");
+
+    }
+
+    public function showProfile($id){
+
+        $user= User::find($id);
+        return view("PagesPrincipals.principal",compact("user"));
 
     }
 

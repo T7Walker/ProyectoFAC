@@ -16,6 +16,8 @@ use App\Http\Controllers\ZonesController;
 
 use App\Http\Controllers\ScalesController;
 
+use App\Http\Controllers\ImagesController;
+
 
 //
 //ruta de la pagina principal junto 5 publicaciones recientes
@@ -52,11 +54,13 @@ route::put('/Books/{$id}',[BooksController::class,'updateBooks'])->name('Books.u
 //rutas CRUD Usuarios
 //
 route::get('/Users/yourProfile',[UserController::class,'yourProfile'])->name('Users.yourProfile');
-route::get('/LoginPages/registrer',[UserController::class,'record'])->name('LoginPages.record');
+route::get('/LoginPages/registrer',[UserController::class,'registrer'])->name('LoginPages.registrer');
 route::delete('/User/{$id}',[UserController::class,'closeProfile'])->name('Users.closeProfile');
 route::post('/Users/{$id}/editProfile',[UserController::class,'editProfile'])->name('Users.editProfile');
 route::put('/Users/{$id}',[UserController::class,'updateProfile'])->name('Users.updateProfile');
-
-
-
+route::post('PagesPrincipals/principal',[UserController::class,'showProfile'])->name('PagesPrincipals.principal');
+//
+//ruta del controlador de imagenes
+//
+Route::post('/upload', [ImagesController::class, 'store'])->name('upload.image');
 
