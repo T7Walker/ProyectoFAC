@@ -12,14 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('zones', function (Blueprint $table) {
-            
             $table->id();
-            $table->string('name')->NameZone;
-            $table->string('meetingPoint')->MeetingPoint;
-            $table->foreignId('buses_id')->constrained()->onDelete('cascade');
+            $table->string('name');
+            $table->string('meetingPoint');
+            $table->unsignedBigInteger('buses_id'); // Asegúrate de que sea unsignedBigInteger
+            $table->foreign('buses_id')->references('id')->on('buses')->onDelete('cascade'); // Relación correcta
             $table->tinyInteger('status')->default(0);
             $table->timestamps();
-
+            
         });
     }
 

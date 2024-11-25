@@ -12,12 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('buses', function (Blueprint $table) {
-
-            $table->id();
-            $table->integer('numberOfTheRoute')->NumberOfTheRoute;
-            $table->varchar('nameCompany')->NameOfTheCompany;
-            $table->timestamps();
             
+            $table->id(); // Esto es un unsignedBigInteger por defecto
+            $table->integer('numberOfTheRoute');
+            $table->string('nameCompany');
+            $table->timestamps();
         });
     }
 
