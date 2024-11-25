@@ -14,7 +14,7 @@
     <nav class="navbar">
         <!-- Logo -->
         <a href="#" class="navbar-logo">
-            <img src="{{ asset('storage/logo.png' . session('image')) }}" alt="Logo"> <!-- Ruta local -->
+            <img src="https://i.imgur.com/Kw841ke.png" alt="Logo"> <!-- Ruta local -->
         </a>
 
         <!-- Search Bar -->

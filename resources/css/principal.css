@@ -1,13 +1,88 @@
-*{
-
+/* Reset y configuraciones base */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-
 }
-.colorTitulo{
 
-    color: #27ae60;
+/* Fondo del cuerpo */
+body {
+    background-color: #1c2544;
+    color: #fff;
+    padding: 20px;
+}
 
+/* Estilo de los títulos */
+.colorTitulo {
+
+    color: #2ecc71;
+    text-align: center;
+    margin-bottom: 20px;
+    /*text-shadow:
+     -2px -2px 0 white,
+     2px -2px 0 white,
+     -2px 2px 0 white,
+     2px 2px 0 white,
+     0 0 2px #2ecc71,
+     0 0 2px #2ecc71,
+     -2px 0px 0 white,
+     2px 0px 0 white;*/
+     font-size: 50px;
+}
+
+/* Contenedor de tarjetas */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px; /* Espacio entre tarjetas */
+    flex-wrap: wrap; /* Ajusta las tarjetas si el espacio es pequeño */
+    margin-top: 20px;
+}
+
+/* Tarjetas */
+.card {
+    width: 300px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #1c2544, #1ebe61);
+    /*box-shadow: 10px 10px 10px #05cf0f, -10px -10px 20px #05cf0f;*/
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Centra el texto */
+    flex-direction: column; /* Apila los elementos dentro de la tarjeta */
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-color: #2ecc71;
+}
+
+/* Efectos al pasar sobre las tarjetas */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 15px 15px 30px #2ecc71, -15px -15px 30px #2ecc71;
+}
+
+/* Texto dentro de las tarjetas */
+.card-p1 {
+    background-color: transparent;
+    color: #ffffff;
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.6; /* Espaciado entre líneas */
+    font-family: sans-serif;
+}
+.card-p2 {
+    background-color: transparent;
+    color: #ffffff;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6; /* Espaciado entre líneas */
+    font-family: sans-serif;
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #ddd;
 }
