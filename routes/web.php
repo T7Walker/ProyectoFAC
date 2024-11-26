@@ -18,6 +18,10 @@ use App\Http\Controllers\ScalesController;
 
 use App\Http\Controllers\ImagesController;
 
+use App\Http\Controllers\AuthController;
+
+
+
 
 //
 //ruta de la pagina principal junto 5 publicaciones recientes
@@ -63,4 +67,11 @@ route::post('PagesPrincipals/principal',[UserController::class,'showProfile'])->
 //ruta del controlador de imagenes
 //
 Route::post('/upload', [ImagesController::class, 'store'])->name('upload.image');
-
+//
+//ruta de autenticacion
+//
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [AuthController::class, 'showProfile'])->name('profile.show');
+    Route::post('/profile/update', [AuthController::class, 'updateProfile'])->name('profile.update');
+    Route::post('/profile/delete', [AuthController::class, 'deleteAccount'])->name('profile.delete');
+});

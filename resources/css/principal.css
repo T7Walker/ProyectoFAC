@@ -15,20 +15,10 @@ body {
 
 /* Estilo de los títulos */
 .colorTitulo {
-
     color: #2ecc71;
     text-align: center;
     margin-bottom: 20px;
-    /*text-shadow:
-     -2px -2px 0 white,
-     2px -2px 0 white,
-     -2px 2px 0 white,
-     2px 2px 0 white,
-     0 0 2px #2ecc71,
-     0 0 2px #2ecc71,
-     -2px 0px 0 white,
-     2px 0px 0 white;*/
-     font-size: 50px;
+    font-size: 50px;
 }
 
 /* Contenedor de tarjetas */
@@ -45,7 +35,6 @@ body {
     width: 300px;
     border-radius: 20px;
     background: linear-gradient(145deg, #1c2544, #1ebe61);
-    /*box-shadow: 10px 10px 10px #05cf0f, -10px -10px 20px #05cf0f;*/
     padding: 20px;
     display: flex;
     align-items: center;
@@ -71,6 +60,7 @@ body {
     line-height: 1.6; /* Espaciado entre líneas */
     font-family: sans-serif;
 }
+
 .card-p2 {
     background-color: transparent;
     color: #ffffff;
@@ -85,4 +75,113 @@ footer {
     margin-top: 40px;
     text-align: center;
     color: #ddd;
+}
+
+/* Botones tipo rombo */
+.rombo-button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Envoltorio para los bordes */
+.rombo-wrapper {
+    width: 130px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    background-color: #27ae60; /* Color del borde */
+}
+
+/* Botones tipo rombo */
+.rombo-button {
+    width: 120px;
+    height: 120px;
+    background-color: #1c2544;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Contenido dentro del rombo */
+.rombo-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    z-index: 1;
+}
+
+.rombo-content img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+
+/* Efecto hover en los botones */
+.rombo-wrapper:hover .rombo-button {
+    transform: scale(1.1);
+    background-color: #273654;
+}
+
+.rombo-wrapper:hover .rombo-content p {
+    text-shadow: 0 0 5px #27ae60;
+}
+
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .cards-container {
+        gap: 15px; /* Reducir el espacio entre las cartas */
+    }
+
+    .card {
+        width: 160px; /* Reducir el tamaño de las cartas en pantallas pequeñas */
+        height: 200px;
+    }
+
+    .card-p1 {
+        font-size: 12px;
+    }
+
+    .card-p2 {
+        font-size: 12px;
+    }
+    .colorTitulo{
+
+        font-size: 26px;
+
+    }
+    
+}
+
+/* Media Query para pantallas muy pequeñas (celulares en modo vertical) */
+@media (max-width: 480px) {
+    .cards-container {
+        gap: 10px; /* Reducir aún más el espacio entre las cartas */
+    }
+
+    .card {
+        width: 140px; /* Reducir aún más el tamaño de las cartas */
+        height: 180px;
+    }
+
+    .card-p1 {
+        font-size: 16px;
+    }
+
+    .card-p2 {
+        font-size: 0.8rem;
+    }
+    
 }

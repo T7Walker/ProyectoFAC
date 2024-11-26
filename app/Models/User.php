@@ -2,23 +2,42 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class User extends Model
+class User extends Authenticatable
 {
+    use Notifiable;
+
+    // Relación de publicaciones
     public function publications(){
-        
         return $this->hasMany(Publications::class);
-
     }
-    public function books (){
 
+    // Relación de libros
+    public function books () {
         return $this->hasMany(Books::class);
-
     }
-    public function maps (){
 
+    // Relación de mapas
+    public function maps () {
         return $this->hasMany(Maps::class);
-
     }
+
+    // Campos que pueden ser asignados masivamente
+    protected $fillable = [
+        'name', 'email', 'password', // Asegúrate de incluir el campo role aquí
+    ];
+
+    // Campos ocultos para la serialización
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+
+    // Cast para los tipos de datos
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
 }

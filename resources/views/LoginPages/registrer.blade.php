@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrate</title>
+    @vite(['resources/css/registrer.css'])
 </head>
 <body>
+    <h2>Bienvenido a FAC, Registrate</h2>
     <form action="{{ route('LoginPages.registrer') }}" method="GET" enctype="multiplart/form-data">
 
     @csrf 
@@ -19,6 +21,7 @@
     <label>Contraseña:</label>
     <input type="text" name="password">
     <button type="submit">Registrarte</button>
+    <br>
     <label>Pon la url de tu foto de Perfil:</label>
     <input type="text" name="URLProfileIMG">
     <button type="submit">Registrarte</button>

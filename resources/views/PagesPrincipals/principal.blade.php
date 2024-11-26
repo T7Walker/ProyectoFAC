@@ -11,54 +11,66 @@
     @include('PagesPrincipals.navBar')
 
     <h1 class="colorTitulo">Bienvenido</h1>
+    <p class="colorTitulo">User</p>
 
-    <p>user</p>
+    <div class="rombo-button-container">
+        <div class="rombo-wrapper">
+            <div class="rombo-button">
+                <div class="rombo-content">
+                    <img src="https://i.imgur.com/NcDZhd5.png" alt="Mapas">
+                    <p>Mapas</p>
+                </div>
+            </div>
+        </div>
+        <div class="rombo-wrapper">
+            <div class="rombo-button">
+                <div class="rombo-content">
+                    <img src="https://i.imgur.com/AFLjO3z.png" alt="Libros">
+                    <p>Libros</p>
+                </div>
+            </div>
+        </div>
+        <div class="rombo-wrapper">
+            <div class="rombo-button">
+                <div class="rombo-content">
+                    <img src="https://i.imgur.com/CajBXxF.png" alt="Rutas">
+                    <p>Rutas</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <br>
-
-    <div>
-        <p>Mapa</p>
-    </div>
-    <div>
-        <p>Libros</p>
-    </div>
-    <div>
-        <p>Publicaciones</p>
-    </div>
-
-    <br>
-
     <h2 class="colorTitulo">¡Últimas publicaciones!</h2>
-
     <div>
-
-        <p>aqui va todo lo de publications</p>
-
+        <p>Aquí va todo lo de publicaciones</p>
     </div>
-
     <br>
-
-    <h2 class="colorTitulo">¿Quienes somos?</h2>
+    <h2 class="colorTitulo">¿Quiénes somos?</h2>
+    <br>
 
     <!-- Contenedor de Tarjetas -->
     <div class="cards-container">
         <div class="card">
             <p class="card-p1">
-                Somos un grupo de programadores los cuales lanzamos un proyecto el cual te ayudara a integrarte a la cuidad Popayán.
+                Somos un grupo de programadores los cuales lanzamos un proyecto el cual te ayudará a integrarte a la ciudad Popayán.
             </p>
-        </div>
-        <div class="card">
-            <p class="card-p1">
-                ¿Que puedes encontrar en nuestra pagina?
-            </p>
-            <br>
-            <p class="card-p2">En nuestra pagina tenemos servicios los cuales te traen mas comodidad a la hora de integrarte a Popayán, las herramientas como los libros, Publicaciones, mapas en los cuales tienes rutas, zonas regulares. Las cuales te ayudaran a integrarte a Popayán!!</p>
         </div>
     </div>
-
     <br>
     <br>
+    <h2 class="colorTitulo">¿Que puedes encontrar en nuestra pagina?</h2>
+    <br>
+    <div class="cards-container">
+        <div class="card">
+            <p class="card-p2">
+                En nuestra página tenemos servicios que traen comodidad al integrarte a Popayán, como herramientas de libros, publicaciones y mapas con rutas y zonas críticas.
+            </p>
+        </div>
+    </div>
+    
 
+    <br><br>
     <footer>
         @include('PagesPrincipals.footer')
     </footer>

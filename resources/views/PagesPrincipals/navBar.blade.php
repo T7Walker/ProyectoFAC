@@ -4,17 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NavBar</title>
-    @vite([
-        // CSS
-        'resources/css/navBar.css',
-        ])
+    <!-- Vinculación de estilos y scripts con Vite -->
+    @vite(['resources/css/navBar.css', 'resources/js/navBar.js'])
 </head>
-
+<body>
     <!-- Navbar -->
     <nav class="navbar">
         <!-- Logo -->
         <a href="#" class="navbar-logo">
-            <img src="https://i.imgur.com/Kw841ke.png" alt="Logo"> <!-- Ruta local -->
+            <img src="https://i.imgur.com/Kw841ke.png" alt="Logo">
         </a>
 
         <!-- Search Bar -->
@@ -25,11 +23,10 @@
         <!-- Profile Section -->
         <div class="navbar-profile-container" onclick="toggleDropdown()">
             <div class="navbar-profile">
-                <img src="https://preview.redd.it/kefla-dragon-ball-super-akaicabbage-v0-txgvcnopre0a1.jpg?auto=webp&s=8d0cd6894b7a756079d92b3f378c25d8d830ca99" alt="Foto de Perfil"> <!-- Ruta local -->
+                <img src="https://preview.redd.it/kefla-dragon-ball-super-akaicabbage-v0-txgvcnopre0a1.jpg?auto=webp&s=8d0cd6894b7a756079d92b3f378c25d8d830ca99" alt="Foto de Perfil">
             </div>
             <div class="profile-dropdown">
-                <a href="#">Mi Perfil</a>
-                <a href="#">Configuración</a>
+                <a href="#" onclick="openModal()">Mi Perfil</a>
                 <a href="#">Cerrar Sesión</a>
             </div>
         </div>
@@ -39,20 +36,19 @@
     <div style="margin-top: 80px; padding: 20px;">
     </div>
 
-    <script>
-        function toggleDropdown() {
-            const profileContainer = document.querySelector('.navbar-profile-container');
-            profileContainer.classList.toggle('active');
-        }
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function (event) {
-            const profileContainer = document.querySelector('.navbar-profile-container');
-            if (!profileContainer.contains(event.target)) {
-                profileContainer.classList.remove('active');
-            }
-        });
-    </script>
-
+    <!-- Modal -->
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <h2>Perfil de Usuario</h2>
+            <br>
+            <img src="https://preview.redd.it/kefla-dragon-ball-super-akaicabbage-v0-txgvcnopre0a1.jpg?auto=webp&s=8d0cd6894b7a756079d92b3f378c25d8d830ca99" alt="Foto de perfil" style="border-radius: 50%; margin-bottom: 20px; border-radius: 50%; margin-bottom: 20px;">
+            <p>Nombre de Usuario
+                <br>
+                <strong>User</strong>
+            </p>
+            <button onclick="editProfile()">Editar Perfil</button>
+            <button onclick="deleteProfile()">Eliminar Perfil</button>
+        </div>
+    </div>
 </body>
 </html>
