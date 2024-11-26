@@ -70,8 +70,8 @@ Route::post('/upload', [ImagesController::class, 'store'])->name('upload.image')
 //
 //ruta de autenticacion
 //
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [AuthController::class, 'showProfile'])->name('profile.show');
-    Route::post('/profile/update', [AuthController::class, 'updateProfile'])->name('profile.update');
-    Route::post('/profile/delete', [AuthController::class, 'deleteAccount'])->name('profile.delete');
-});
+Route::get('register', [AuthController::class, 'showRegisterForm'])->name('register.form');
+Route::post('register', [AuthController::class, 'register']);
+Route::get('login', [AuthController::class, 'showLoginForm'])->name('login.form');
+Route::post('login', [AuthController::class, 'login']);
+Route::post('logout', [AuthController::class, 'logout'])->name('logout');

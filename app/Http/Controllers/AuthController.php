@@ -12,7 +12,7 @@ class AuthController extends Controller
     // Mostrar formulario de registro
     public function showRegisterForm()
     {
-        return view('auth.register');  // Vista donde se muestra el formulario de registro
+        return view('LoginPages.registrer');  // Vista donde se muestra el formulario de registro
     }
 
     // Procesar registro
@@ -82,46 +82,4 @@ class AuthController extends Controller
         return view('auth.profile', ['user' => Auth::user()]);  // Vista con los datos del usuario autenticado
     }
 
-    // Actualizar perfil
-    public function updateProfile(Request $request)
-    {
-        // Asegurarse de que el usuario esté autenticado
-        if (!$user = Auth::user()) {
-            return redirect()->route('login.form')->withErrors(['error' => 'Usuario no autenticado.']);
-        }
-
-        // Validar los datos de actualización
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,  // Validar email sin duplicados
-        ]);
-
-        try {
-            // Actualizar los datos del usuario
-            $user->update($request->only('name', 'email'));  // Actualizar sólo los campos 'name' y 'email'
-            return back()->with('success', 'Perfil actualizado.');
-        } catch (\Exception $e) {
-            return back()->withErrors(['error' => 'No se pudo actualizar el perfil: ' . $e->getMessage()]);
-        }
-    }
-
-    // Borrar cuenta
-    public function deleteAccount()
-    {
-        // Asegurarse de que el usuario esté autenticado
-        if (!$user = Auth::user()) {
-            return redirect()->route('login.form')->withErrors(['error' => 'Usuario no autenticado.']);
-        }
-
-        try {
-            // Cerrar sesión antes de eliminar la cuenta
-            Auth::logout();
-            // Eliminar el usuario
-            $user->delete();
-            // Redirigir al home con un mensaje de éxito
-            return redirect('/')->with('success', 'Cuenta eliminada.');
-        } catch (\Exception $e) {
-            return back()->withErrors(['error' => 'No se pudo eliminar la cuenta: ' . $e->getMessage()]);
-        }
-    }
 }
