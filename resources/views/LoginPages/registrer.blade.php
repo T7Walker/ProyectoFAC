@@ -7,23 +7,22 @@
     @vite(['resources/css/registrer.css'])
 </head>
 <body>
-    <h2>Bienvenido a FAC, Registrate</h2>
-    <form action="{{ route('LoginPages.registrer') }}" method="GET" enctype="multiplart/form-data">
+    <form action="{{ route('registrer') }}" method="POST" enctype="multiplart/form-data">
 
     @csrf 
 
     <label>Nombre:</label>
-    <input type="text" name="name">
+    <input type="text" name="name" required>
     <br>
     <label>Correo Electronico:</label>
-    <input type="text" name="Company">
+    <input type="text" name="Company" required>
     <br>
-    <label>Contraseña:</label>
-    <input type="text" name="password">
-    <button type="submit">Registrarte</button>
+    <label>Contraseña:</label> 
+    <input type="text" name="password" required>
+    <button type="submit">Registrarte</button >
     <br>
     <label>Pon la url de tu foto de Perfil:</label>
-    <input type="text" name="URLProfileIMG">
+    <input type="text" name="URLProfileIMG" required>
     <button type="submit">Registrarte</button>
 
     </form>

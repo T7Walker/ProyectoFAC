@@ -6,15 +6,20 @@
     <title>Login</title>
 </head>
 <body>
+    <form action="{{route('login')}}" method="POST">
+    @csrf
 
-    <label>Correo Electronico:</label>
-    <input type="text" name="Company">
+    <div>
+        <label>Correo Electronico:</label>
+        <input type="text" name="Company" required>
+    </div>
     <br>
-    <label>Contraseña:</label>
-    <input type="text" name="password">
-    <button type="submit">Registrarte</button>
-    <button type="submit">Registrarte</button>
-    
+    <div>
+        <label>Contraseña:</label>
+        <input type="text" name="password" required>
+    </div>
+    <button type="submit">inicia sesion</button>
+</form>
     
 </body>
 </html>

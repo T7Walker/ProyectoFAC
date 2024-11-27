@@ -10,10 +10,11 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+   
     public function record(Request $request)
 {
     // Validar los datos de entrada
-    $request->validate([
+    $request->validate(rules: [
         'name' => 'required|string|max:255',
         'email' => 'required|email|unique:users,email',
         'password' => 'required|confirmed|min:8', // Asegura que la contraseña se confirme
@@ -37,29 +38,35 @@ class UserController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('PagesPrincipals.navBar');  // Redirigir al usuario a la página principal
+        return redirect()->route('PagesPrincipals.principal'); // Redirigir a la página principal
+
     }
     public function updateProfile(Request $request, $id)
-{
-    $request->validate([
-        'name' => 'required|string|max:255',
-        'email' => 'required|email',
-        'password' => 'nullable|min:8',  // Solo validar la contraseña si se ha cambiado
-    ]);
-
-    $user = User::find($id);
-    $user->name = $request->name;
-    $user->email = $request->email;
-
-    if ($request->password) {
-        $user->password = Hash::make($request->password);  // Encriptar la nueva contraseña
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'password' => 'nullable|min:8', // Validar solo si hay un cambio de contraseña
+        ]);
+    
+        $user = User::findOrFail($id); // Mejor usar `findOrFail` para manejar errores
+        $user->name = $request->name;
+        $user->email = $request->email;
+    
+        if ($request->password) {
+            $user->password = Hash::make($request->password);
+        }
+    
+        if ($request->URLProfileIMG) {
+            $user->URLProfileIMG = $request->URLProfileIMG;
+        }
+    
+        $user->save();
+    
+        return redirect()->route('PagesPrincipals.principal')
+            ->with('status', 'Perfil actualizado con éxito.');
     }
-
-    $user->URLProfileIMG = $request->URLProfileIMG;
-    $user->save();
-
-    return redirect()->route('profile.edit', $id)->with('status', 'Perfil actualizado con éxito');
-}
+    
 
 
     
@@ -93,7 +100,7 @@ class UserController extends Controller
     ]);
 
     // Intentar autenticar al usuario
-    if (Auth::attempt($request->only('email', 'password'))) {
+    if (Auth::attempt(credentials: $request->only('email', 'password'))) {
         // Regenerar la sesión para protegerla de ataques de fijación de sesión
         $request->session()->regenerate();
 
@@ -115,16 +122,16 @@ class UserController extends Controller
 
     }
 
-    public function yourProfile(Request $request){
-
-        $user = User::find( $request->user_id );
-        return view("Users.yourProfile",compact("user"));
-
+    public function yourProfile()
+    {
+        $user = Auth::user(); // Obtener usuario autenticado
+        return view("PagesPrincipals.navBar", compact("user"));
     }
-    public function editprofile($id){
 
-        $user = User::find($id);
-        return view("Users.editProfile",compact("user"));
+    public function editprofile(){
+
+        $user = Auth::user();
+        return view("PagesPrincipals.navBar",compact("user"));
 
     }
     public function closeProfile($id){
@@ -132,16 +139,14 @@ class UserController extends Controller
         $user = User::find($id);
         $user->delete();
         
-        return redirect('')->route("PagesPrincipal.principal");
+        return redirect('')->route("PagesPrincipal.navBar");
     
     }
-    /*public function updateProfile(Request $request, $id){
+    public function principalInfoUser($id){
 
         $user = User::find($id);
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = $request->password;
-        $user->URLProfileIMG = $request->URLProfileIMG;
-    }*/
+        return view("PagesPrincipals.principal",compact("user"));
+
+    }
 
 }

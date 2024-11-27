@@ -11,11 +11,12 @@
     @include('PagesPrincipals.navBar')
 
     <h1 class="colorTitulo">Bienvenido</h1>
-    <p class="colorTitulo">User</p>
+    <p class="colorTitulo">{{$user->name}}</p>
 
     <div class="rombo-button-container">
         <div class="rombo-wrapper">
             <div class="rombo-button">
+                <a href="{{route('')}}"></a>
                 <div class="rombo-content">
                     <img src="https://i.imgur.com/NcDZhd5.png" alt="Mapas">
                     <p>Mapas</p>
@@ -24,6 +25,7 @@
         </div>
         <div class="rombo-wrapper">
             <div class="rombo-button">
+                <a href="{{route('Books.allBooks')}}"></a>
                 <div class="rombo-content">
                     <img src="https://i.imgur.com/AFLjO3z.png" alt="Libros">
                     <p>Libros</p>
@@ -32,6 +34,7 @@
         </div>
         <div class="rombo-wrapper">
             <div class="rombo-button">
+                <a href="{{route('')}}"></a>
                 <div class="rombo-content">
                     <img src="https://i.imgur.com/CajBXxF.png" alt="Rutas">
                     <p>Rutas</p>

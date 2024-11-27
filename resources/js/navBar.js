@@ -16,19 +16,31 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById("profileModal").style.display = "none";
     }
 
+    // Abre el formulario de edición de perfil
+    function openEditProfileForm() {
+        document.getElementById('editProfileForm').classList.remove('hidden');
+    }
+
+    // Cierra el formulario de edición de perfil
+    function closeEditProfileForm() {
+        document.getElementById('editProfileForm').classList.add('hidden');
+    }
+
     // Funciones de botones
     function editProfile() {
-        alert("Redirigiendo a editar perfil...");
+        openEditProfileForm();
     }
 
     function logout() {
         alert("Cerrando sesión...");
+        document.querySelector('#logoutForm').submit(); // Suponiendo que el formulario para cerrar sesión tiene este ID
     }
 
     function deleteProfile() {
         const confirmation = confirm("¿Estás seguro de que deseas eliminar tu perfil?");
         if (confirmation) {
             alert("Perfil eliminado");
+            document.querySelector('#deleteProfileForm').submit(); // Suponiendo que el formulario para eliminar perfil tiene este ID
         }
     }
 
@@ -53,6 +65,8 @@ document.addEventListener('DOMContentLoaded', function () {
         dropdownLinks.forEach(link => {
             if (link.innerText === 'Mi Perfil') {
                 link.addEventListener('click', openModal);
+            } else if (link.innerText === 'Cerrar Sesión') {
+                link.addEventListener('click', logout);
             }
         });
     }

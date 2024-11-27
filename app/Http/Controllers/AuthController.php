@@ -33,13 +33,13 @@ class AuthController extends Controller
         ]);
 
         // Redirigir al formulario de login con un mensaje de éxito
-        return redirect()->route('login.form')->with('success', 'Cuenta creada con éxito.');
+        return redirect()->route('LoginPages.login')->with('success', 'Cuenta creada con éxito.');
     }
 
     // Mostrar formulario de login
     public function showLoginForm()
     {
-        return view('auth.login');  // Vista donde se muestra el formulario de login
+        return view('LoginPages.login');  // Vista donde se muestra el formulario de login
     }
 
     // Procesar login
@@ -55,7 +55,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             // Regenerar la sesión para prevenir fijación de sesión
             $request->session()->regenerate();
-            return redirect()->intended('/profile');  // Redirigir al perfil del usuario
+            return redirect()->intended('PagesPrincipals.principal');  // Redirigir al perfil del usuario
         }
 
         // Si las credenciales son incorrectas, regresar con error
@@ -73,13 +73,13 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
 
         // Redirigir al home
-        return redirect('/');
+        return redirect('PagesPrincipals.principal');
     }
 
     // Mostrar perfil del usuario
     public function showProfile()
     {
-        return view('auth.profile', ['user' => Auth::user()]);  // Vista con los datos del usuario autenticado
+        return view('PagesPrincipals.principal', ['user' => Auth::user()]);  // Vista con los datos del usuario autenticado
     }
 
 }

@@ -34,7 +34,7 @@ class PublicationsController extends Controller
 
         $publication = Publications::all();
 
-        return view('PagesPrincipals.principal', compact(('publication')));
+        return view('PagesPrincipals.principal',compact('publication'));
 
     }
 
@@ -54,15 +54,16 @@ class PublicationsController extends Controller
         return redirect('')->route('Publications.allPublication');
 
     }
-    public function allPublication($id){
+    //public function allPublication($id){
 
-        $publication=Publications::find($id);
-        return view('Publications.allPublication', compact('publication'));
-    }
+       // $publication=Publications::find($id);
+       // return view('Publications.allPublication', compact('publication'));
+   // }
     public function viewPublication($id){
         
         $publication=Publications::find($id);
         return view('Publications.viewPublication', compact('publication'));
+
     }
     public function updatePublication(Request $request, $id){
 
@@ -70,6 +71,7 @@ class PublicationsController extends Controller
         $publication->description =$request->description;
         $publication->imageURL =$request->UrlOfTheImage;
         $publication->save;
+        
         return redirect()->route('Publications.allPublication');
         
     }

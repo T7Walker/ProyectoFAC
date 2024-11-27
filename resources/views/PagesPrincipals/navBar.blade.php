@@ -27,7 +27,10 @@
             </div>
             <div class="profile-dropdown">
                 <a href="#" onclick="openModal()">Mi Perfil</a>
-                <a href="#">Cerrar Sesión</a>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit">Cerrar Sesión</button>
+                </form>
             </div>
         </div>
     </nav>
@@ -46,8 +49,29 @@
                 <br>
                 <strong>User</strong>
             </p>
-            <button onclick="editProfile()">Editar Perfil</button>
-            <button onclick="deleteProfile()">Eliminar Perfil</button>
+            <button onclick="openEditProfileForm()">Editar Perfil</button>
+    <div id="editProfileForm" class="edit-form hidden">
+        <form action="{{ route('Users.updateProfile') }}" method="POST">
+            @csrf
+            @method('PUT')
+            <label for="name">Nombre:</label>
+            <input type="text" name="name" id="name" value="{{ Auth::user()->name }}" required>
+            <label for="email">Correo:</label>
+            <input type="email" name="email" id="email" value="{{ Auth::user()->email }}" required>
+            <label for="URLProfileIMG">URL de la foto de perfil:</label>
+            <input type="text" name="URLProfileIMG" id="URLProfileIMG" value="{{ Auth::user()->URLProfileIMG }}" required>
+
+            <button type="submit">Guardar Cambios</button>
+        </form>
+        <button onclick="closeEditProfileForm()">Cancelar</button>
+    </div>
+
+        <form action="{{ route('profile.delete') }}" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar tu perfil?');">
+            @csrf
+            @method('DELETE')
+            <button type="submit">Eliminar Perfil</button>
+        </form>
+    
         </div>
     </div>
 </body>

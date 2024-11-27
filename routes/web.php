@@ -1,77 +1,51 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\UserController;
-
-use App\Http\Controllers\MapsController;
-
 use App\Http\Controllers\BooksController;
-
 use App\Http\Controllers\PublicationsController;
-
-use App\Http\Controllers\BusesController;
-
-use App\Http\Controllers\ZonesController;
-
-use App\Http\Controllers\ScalesController;
-
 use App\Http\Controllers\ImagesController;
-
 use App\Http\Controllers\AuthController;
 
+// Página principal junto con 5 publicaciones recientes
+Route::get('/PagesPrincipals/principal', [PublicationsController::class, 'principal'])->name('PagesPrincipals.principal');
 
+// Grupo de rutas para CRUD de Publicaciones
+Route::prefix('Publications')->name('Publications.')->group(function () {
+    Route::get('allPublication', [PublicationsController::class, 'allPublication'])->name('allPublication');
+    Route::get('createInfo', [PublicationsController::class, 'infoPublication'])->name('createInfo');
+    Route::delete('/{id}', [PublicationsController::class, 'deletePublication'])->name('delete');
+    Route::post('/{id}', [PublicationsController::class, 'viewPublication'])->name('viewPublication');
+    Route::post('/{id}/editPublication', [PublicationsController::class, 'editPublication'])->name('edit');
+    Route::put('/{id}', [PublicationsController::class, 'updatePublication'])->name('update');
+});
 
+// Grupo de rutas para CRUD de Libros
+Route::prefix('Books')->name('Books.')->group(function () {
+    Route::get('allBooks', [BooksController::class, 'allBooks'])->name('allBooks');
+    Route::get('pushBooks', [BooksController::class, 'storeBook'])->name('pushBooks');
+    Route::delete('/{id}', [BooksController::class, 'deleteBook'])->name('delete');
+    Route::post('/{id}', [BooksController::class, 'viewBook'])->name('viewBooks');
+    Route::post('/{id}/editBooks', [BooksController::class, 'editBooks'])->name('editBooks');
+    Route::put('/{id}', [BooksController::class, 'updateBooks'])->name('updateBooks');
+});
 
-//
-//ruta de la pagina principal junto 5 publicaciones recientes
-//
-route::get('/PagesPrincipals/principal',[PublicationsController::class,'principal'])->name('PagesPrincipals.principal');
-//
-//ruta de CRUD publicaciones
-//
-route::get('/Publications/allPublication',[PublicationsController::class,'allPublication'])->name('Publications.allPublication');
-route::get('/Publications/createInfo',[PublicationsController::class,'infoPublication'])->name('Publications.createInfo');
-route::delete('/Publications/{$id}',[PublicationsController::class,'deletePublication'])->name('Publication.delete');
-route::post('/Publications/{$id}',[PublicationsController::class,'viewPublication'])->name('Publications.viewPublication');
-route::post('/Publications/{$id}/editPublication',[PublicationsController::class,'editPublication'])->name('Publications.edit');
-route::put('/Publications/{$id}',[PublicationsController::class,'updatePublication'])->name('Publications.updatePublication');
-//
-//rutas CRUD libros
-//
-route::get('/Books/allBooks',[BooksController::class,'allBooks'])->name('Books.llBooks');
-route::get('/Books/pushBooks',[BooksController::class,'storeBook'])->name('Books.pushBooks');
-route::delete('/Books/{$id}',[BooksController::class,'deleteBook'])->name('Books.delete');
-route::post('/Books/{$id}',[BooksController::class,'viewBook'])->name('Books.viewBooks');
-route::post('/Books/{$id}/editBooks',[BooksController::class,'editBooks'])->name('Books.editBooks');
-route::put('/Books/{$id}',[BooksController::class,'updateBooks'])->name('Books.updateBooks');
-//
-//rutas CRUD libros
-//
-route::get('/Books/allBooks',[BooksController::class,'allBooks'])->name('Books.llBooks');
-route::get('/Books/pushBooks',[BooksController::class,'storeBook'])->name('Books.pushBooks');
-route::delete('/Books/{$id}',[BooksController::class,'deleteBook'])->name('Books.delete');
-route::post('/Books/{$id}',[BooksController::class,'viewBook'])->name('Books.viewBooks');
-route::post('/Books/{$id}/editBooks',[BooksController::class,'editBooks'])->name('Books.editBooks');
-route::put('/Books/{$id}',[BooksController::class,'updateBooks'])->name('Books.updateBooks');
-//
-//rutas CRUD Usuarios
-//
-route::get('/Users/yourProfile',[UserController::class,'yourProfile'])->name('Users.yourProfile');
-route::get('/LoginPages/registrer',[UserController::class,'registrer'])->name('LoginPages.registrer');
-route::delete('/User/{$id}',[UserController::class,'closeProfile'])->name('Users.closeProfile');
-route::post('/Users/{$id}/editProfile',[UserController::class,'editProfile'])->name('Users.editProfile');
-route::put('/Users/{$id}',[UserController::class,'updateProfile'])->name('Users.updateProfile');
-route::post('PagesPrincipals/principal',[UserController::class,'showProfile'])->name('PagesPrincipals.principal');
-//
-//ruta del controlador de imagenes
-//
+// Grupo de rutas para CRUD de Usuarios
+Route::prefix('Users')->name('Users.')->group(function () {
+    Route::get('navBar', [UserController::class, 'yourProfile'])->name('yourProfile');
+    Route::delete('/{id}', [UserController::class, 'closeProfile'])->name('closeProfile');
+    Route::post('/{id}/editProfile', [UserController::class, 'editProfile'])->name('editProfile');
+    Route::put('/{id}', [UserController::class, 'updateProfile'])->name('Users.updateProfile');
+});
+
+// Ruta para subir imágenes
 Route::post('/upload', [ImagesController::class, 'store'])->name('upload.image');
-//
-//ruta de autenticacion
-//
-Route::get('register', [AuthController::class, 'showRegisterForm'])->name('register.form');
-Route::post('register', [AuthController::class, 'register']);
-Route::get('login', [AuthController::class, 'showLoginForm'])->name('login.form');
-Route::post('login', [AuthController::class, 'login']);
-Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+
+// Grupo de rutas para autenticación
+Route::middleware(['auth'])->group(function () {
+    Route::get('/LoginPages/registrer', [AuthController::class, 'showRegisterForm'])->name('LoginPages.registrer');
+    Route::post('/LoginPages/record', action: [AuthController::class, 'register']);
+    Route::get('/LoginPages/login', [AuthController::class, 'showLoginForm'])->name('LoginPages.login');
+    Route::post('/login', [AuthController::class, 'login']);
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+});
