@@ -1,0 +1,81 @@
+{
+    "files.associations": {
+        "*.blade.php": "blade",
+        "*.css": "css"
+    },
+    "editor.fontSize": 13,
+    "editor.wordWrap": "on",
+    "window.zoomLevel": -1,
+    "editor.formatOnSave": true,
+    "editor.useTabStops": false,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "files.autoSave": "onFocusChange",
+    "editor.autoClosingBrackets": "always",
+    "editor.autoClosingComments": "always",
+    "editor.autoClosingDelete": "always",
+    "editor.autoClosingOvertype": "always",
+    "editor.autoClosingQuotes": "always",
+    "editor.definitionLinkOpensInPeek": true,
+    "editor.smoothScrolling": true,
+    "editor.tabCompletion": "on",
+    "[sql]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.useTabStops": false,
+        "editor.tabSize": 4
+    },
+    "[java]": {
+        "editor.formatOnPaste": false,
+        "editor.formatOnSave": false,
+        "editor.formatOnType": false,
+        "editor.useTabStops": false,
+        "editor.tabSize": 4
+    },
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features",
+        "editor.useTabStops": false,
+        "editor.tabSize": 4
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.useTabStops": false,
+        "editor.tabSize": 4
+    },
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+        "editor.useTabStops": false,
+        "editor.tabSize": 4
+    },
+    "[blade]": {
+        "editor.defaultFormatter": "shufo.vscode-blade-formatter",
+        "editor.useTabStops": false,
+        "editor.tabSize": 4,
+        "editor.formatOnPaste": false,
+        "editor.formatOnSave": true,
+        "editor.formatOnType": false
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.useTabStops": false,
+        "editor.tabSize": 4
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.useTabStops": false,
+        "editor.tabSize": 4
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features",
+        "editor.useTabStops": true,
+        "editor.tabSize": 4
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features",
+        "editor.useTabStops": true,
+        "editor.tabSize": 4
+    },
+    "terminal.integrated.automationProfile.windows": {
+        "path": "C:\\Program Files\\Git\\bin\\bash.exe",
+        "args": ["--login"]
+    }
+}
