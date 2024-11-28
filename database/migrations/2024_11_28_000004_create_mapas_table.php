@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('mapas', function (Blueprint $table) {
-            $table->id()->autoIncrement()->unique();
-            $table->foreignId('user_id')->nullable()->constrained('usuarios')->cascadeOnDelete();
-            $table->text('rute_name');
+            $table->id()->autoIncrement()->unique(); // ID unico y con autoincremento.
+            $table->foreignId('user_id')->nullable()->constrained('usuarios')->cascadeOnDelete(); // Llave foranea que se llama user_id, esta conectada con usuarios y es cambiante por relacion por el cascadeOnDelete.
+            $table->text('rute_name'); // En vez de varchar, se usa text, para mayor compatibilidad con otras bases de datos, como postgressmigrations.
             $table->text('timetable');
             $table->text('description');
         });

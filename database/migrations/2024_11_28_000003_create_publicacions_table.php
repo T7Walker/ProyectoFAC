@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('publicacions', function (Blueprint $table) {
-            $table->id()->autoIncrement()->unique();
-            $table->foreignId('user_id')->nullable()->constrained('usuarios')->cascadeOnDelete();
-            $table->text('content');
+            $table->id()->autoIncrement()->unique(); // ID unico y con autoincremento.
+            $table->foreignId('user_id')->nullable()->constrained('usuarios')->cascadeOnDelete(); // Llave foranea que se llama user_id, esta conectada con usuarios y es cambiante por relacion por el cascadeOnDelete.
+            $table->text('content'); // En vez de varchar, se usa text, para mayor compatibilidad con otras bases de datos, como postgressmigrations.
             $table->text('url_file');
             $table->date('date');
         });

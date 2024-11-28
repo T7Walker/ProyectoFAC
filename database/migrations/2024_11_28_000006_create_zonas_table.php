@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('zonas', function (Blueprint $table) {
-            $table->id()->autoIncrement()->unique();
-            $table->text('zone_name');
+            $table->id()->autoIncrement()->unique(); // ID unico y con autoincremento.
+            $table->text('zone_name'); // En vez de varchar, se usa text, para mayor compatibilidad con otras bases de datos, como postgressmigrations.
             $table->text('meeting_place');
             $table->boolean('is_safe');
         });

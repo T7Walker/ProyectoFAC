@@ -9,12 +9,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('usuarios', function (Blueprint $table) {
-            $table->id()->autoIncrement()->unique();
-            $table->text('name');
+            $table->id()->autoIncrement()->unique(); // ID unico y con autoincremento.
+            $table->text('name'); // En vez de varchar, se usa text, para mayor compatibilidad con otras bases de datos, como postgressmigrations.
             $table->text('email');
             $table->text('password')->unique();
             $table->date('date_creation');
-            $table->rememberToken();
+            $table->rememberToken(); // Aqui se guardara el token de inicio de sesion o las cookies por asi decirlo.
         });
     }
 

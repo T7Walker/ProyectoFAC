@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('r_mapas_zonas', function (Blueprint $table) {
-            $table->id()->autoIncrement()->unique();
-            $table->foreignId('map_id')->nullable()->constrained('mapas')->cascadeOnDelete();
-            $table->foreignId('zone_id')->nullable()->constrained('zonas')->cascadeOnDelete();
-        });
+            $table->id()->autoIncrement()->unique(); // ID unico y con autoincremento.
+            $table->foreignId('map_id')->nullable()->constrained('mapas')->cascadeOnDelete(); // Llave foranea que se llama map_id, esta conectada con mapas y es cambiante por relacion por el cascadeOnDelete.
+            $table->foreignId('zone_id')->nullable()->constrained('zonas')->cascadeOnDelete(); // Llave foranea que se llama zone_id, esta conectada con zonas y es cambiante por relacion por el cascadeOnDelete.
+        }); 
     }
 
     /**

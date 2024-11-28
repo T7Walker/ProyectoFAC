@@ -33,7 +33,8 @@
         <label>URL de la Foto de Perfil:</label>
         <input type="text" name="url_photo" placeholder="URL de tu imagen aqui" required>
         <br>
-
+		
+        <!-- Usa input submit en vez de botones, es buenas practicas y funciona mejor. -->
         <input type="submit" value="Registrarse">
     </form>
 </body>

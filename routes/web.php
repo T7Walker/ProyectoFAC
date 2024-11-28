@@ -6,21 +6,31 @@ use App\Http\Controllers\Profile;
 use App\Http\Controllers\MainPage;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/register', [Register::class, 'index'])->name('register.index');
-Route::post('/register/save-user', [Register::class, 'store'])->name('register.saveUser');
+/*	
+	Todo lo del registro, recuerda que:
+	- Get es para enviar datos.
+	- Post es para recibir e interpretar los datos. Ya sea en js o en controllers.
+ */
+Route::get('/register', [Register::class, 'index'])->name('register.index'); // Solo es el formulario
+Route::post('/register/save-user', [Register::class, 'store'])->name('register.saveUser'); // Manda los datos del formulario para interpretarse.
 
-Route::get('/login', [Login::class, 'index'])->name('login.index');
-Route::post('/login/check', [Login::class, 'login'])->name('login.check');
-Route::post('/logout', [Login::class, 'logout'])->name('login.logout');
+/* 
+	Todo lo de login
+ */
+Route::get('/login', [Login::class, 'index'])->name('login.index'); // Vista del login y formulario
+Route::post('/login/check', [Login::class, 'login'])->name('login.check'); // Revision del login y autenticacion
+Route::post('/logout', [Login::class, 'logout'])->name('login.logout'); // Cerrar sesion del usuario
 
-Route::get('/', [MainPage::class, 'index'])->name('mainPage.index');
+/*
+	Todo de la pagina principal
+*/
+Route::get('/', [MainPage::class, 'index'])->name('mainPage.index'); // Vista de la pagina principal.
 
-Route::post('/profile/updateData', [Profile::class, 'update'])->name('profile.updateData');
-Route::post('/profile/delUser', [Profile::class, 'deleted'])->name('profile.delUser');
-
-
-
-
+/*
+	Todo lo del perfil
+*/
+Route::post('/profile/updateData', [Profile::class, 'update'])->name('profile.updateData'); // Envia los cambios hechos del perfil para interpretarse.
+Route::post('/profile/delUser', [Profile::class, 'deleted'])->name('profile.delUser'); // Enviar datos de eliminacion para interpretarse.
 
 
 

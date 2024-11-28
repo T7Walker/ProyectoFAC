@@ -27,8 +27,9 @@
             <label>Contraseña:</label>
             <input type="password" placeholder="Ingresa tu contraseña" name="password" required>
         </div>
-
-        <input type="submit" value="Iniciar Sesion">
+		
+        <!-- Usa input submit en vez de botones, es buenas practicas y funciona mejor. -->
+        <input type="submit" value="Iniciar Sesion"> 
     </form>
 </body>
 

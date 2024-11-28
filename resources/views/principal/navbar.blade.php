@@ -4,7 +4,7 @@
         'resources/css/principal/navbar.css',
 
         // JS
-        '/resources/js/principal/navbar.js',
+        'resources/js/principal/navbar.js',
     ])
 </head>
 
@@ -21,19 +21,19 @@
         </div>
 
         <!-- Profile Section -->
-        <div class="navbar-profile-container" onclick="toggleDropdown()">
-
+        <div class="navbar-profile-container">
             <div class="navbar-profile">
                 <img src="https://preview.redd.it/kefla-dragon-ball-super-akaicabbage-v0-txgvcnopre0a1.jpg?auto=webp&s=8d0cd6894b7a756079d92b3f378c25d8d830ca99"
                     alt="Foto de Perfil">
             </div>
 
             <div class="profile-dropdown">
-                <a onclick="openModal()">Mi Perfil</a>
+                <a class="open-profile-modal">Mi Perfil</a>
 
                 <form action="{{ route('login.logout') }}" method="POST">
                     @csrf
-
+					
+					<!-- Usa input submit en vez de botones, es buenas practicas y funciona mejor. -->
                     <input type="submit" value="Cerrar Sesion">
                 </form>
             </div>
@@ -51,20 +51,18 @@
             <br>
 
             <img src="https://preview.redd.it/kefla-dragon-ball-super-akaicabbage-v0-txgvcnopre0a1.jpg?auto=webp&s=8d0cd6894b7a756079d92b3f378c25d8d830ca99"
-                alt="Foto de perfil"
-                style="border-radius: 50%; margin-bottom: 20px; border-radius: 50%; margin-bottom: 20px;">
+                alt="Foto de perfil" style="border-radius: 50%; margin-bottom: 20px;">
 
             <p>Nombre de Usuario
                 <br>
                 <strong>User</strong>
             </p>
 
-            <button onclick="openEditProfileForm()">Editar Perfil</button>
+            <button class="edit-profile-btn">Editar Perfil</button>
 
             <div id="editProfileForm" class="edit-form hidden">
                 <form action="{{ route('profile.updateData') }}" method="POST">
                     @csrf
-
                     <label for="name">Nombre:</label>
                     <input type="text" name="name" id="name" value="{{ $userData->name }}" required>
 
@@ -73,20 +71,21 @@
 
                     <label for="URLProfileIMG">URL de la foto de perfil:</label>
                     <input type="text" name="URLProfileIMG" id="URLProfileIMG" required>
-
+					
+					<!-- Usa input submit en vez de botones, es buenas practicas y funciona mejor. -->
                     <input type="submit" value="Guardar Cambios">
                 </form>
 
-                <button onclick="closeEditProfileForm()">Cancelar</button>
+                <button class="close-edit-profile-form">Cancelar</button>
             </div>
 
             <form action="{{ route('profile.delUser') }}" method="POST"
                 onsubmit="return confirm('¿Estás seguro de que deseas eliminar tu perfil?');">
                 @csrf
-
+				
+				<!-- Usa input submit en vez de botones, es buenas practicas y funciona mejor. -->
                 <input type="submit" value="Eliminar Perfil">
             </form>
-
         </div>
     </div>
 </header>
