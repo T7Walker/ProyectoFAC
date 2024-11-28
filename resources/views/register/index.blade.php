@@ -15,28 +15,36 @@
 </head>
 
 <body>
-    <form action="{{ route('register.saveUser') }}" method="post">
+    <div class="tiltle">
+        <h1>Registrate en FAC</h1>
+    </div>
+    <form action="{{ route('register.saveUser') }}" method="post" class="form">
         @csrf
 
-        <label>Correo electronico:</label>
-        <input type="email" name="email" placeholder="Ingresa tu correo electronico" required>
-        <br>
+        <span class="input-span">
+            <label class="label">Correo electronico:</label>
+            <input type="email" name="email" placeholder="Ingresa tu correo electronico" required>
+        </span>
 
-        <label>Contraseña:</label>
-        <input type="password" name="password" placeholder="Ingresa tu contraseña" required>
-        <br>
+        <span class="input-span">
+            <label class="label">Contraseña:</label>
+            <input type="password" name="password" placeholder="Ingresa tu  contraseña" required>
+        </span>
 
-        <label>Nombre:</label>
-        <input type="text" name="username" placeholder="Ingresa tu nombre de usuario" required>
-        <br>
+        <span class="input-span">
+            <label class="label">Nombre:</label>
+            <input type="text" name="name" placeholder="Ingresa tu nombre de usuario" required>
+        </span>
 
-        <label>URL de la Foto de Perfil:</label>
-        <input type="text" name="url_photo" placeholder="URL de tu imagen aqui" required>
-        <br>
-		
+        <span class="input-span">
+            <label class="label">URL de la Foto de Perfil:</label>
+            <input type="text" name="urlimg" placeholder="URL de tu imagen aqui" required>
+        </span>
+
         <!-- Usa input submit en vez de botones, es buenas practicas y funciona mejor. -->
-        <input type="submit" value="Registrarse">
+        <input type="submit" value="Registrarse" class="submit">
     </form>
+    @include('principal/footer')
 </body>
 
 </html>

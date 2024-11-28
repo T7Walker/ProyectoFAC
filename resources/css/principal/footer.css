@@ -1,14 +1,20 @@
 /* Footer Styles */
 .footer {
-    background-color: #1c2544; /* Fondo oscuro */
-    color: #ddd; /* Texto gris claro */
+    background-color: #1c2544;
+    /* Fondo oscuro */
+    color: #ddd;
+    /* Texto gris claro */
     padding: 20px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     font-family: Arial, sans-serif;
-    border-top: 3px solid #32cd32; /* Línea verde */
+    border-top: 3px solid #32cd32;
+    margin: 0;
+    position: sticky;
+    bottom: 0;
+    /* Línea verde */
 }
 
 .footer-content {
@@ -17,6 +23,8 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    height: 100%;
+    margin-left: 8%;
 }
 
 .footer-left {
@@ -26,7 +34,8 @@
 .footer-logo {
     font-size: 3rem;
     font-weight: bold;
-    color: #32cd32; /* Verde claro */
+    color: #32cd32;
+    /* Verde claro */
     margin: 0;
 }
 
@@ -41,7 +50,7 @@
 }
 
 .footer-center p {
-    margin: 5px 0;
+    margin: 10px 0px;
 }
 
 .footer-right {
@@ -50,7 +59,8 @@
 }
 
 .footer-right a {
-    color: #32cd32; /* Verde claro */
+    color: #32cd32;
+    /* Verde claro */
     text-decoration: none;
     margin: 0 5px;
 }

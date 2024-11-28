@@ -7,10 +7,22 @@
 }
 
 /* Fondo del cuerpo */
-body {
+body,
+html {
     background-color: #1c2544;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
     color: #fff;
     padding: 20px;
+    position: sticky;
+    bottom: 0;
+}
+
+body {
+
+    flex: 1;
 }
 
 /* Estilo de los títulos */
@@ -24,9 +36,11 @@ body {
 /* Contenedor de tarjetas */
 .cards-container {
     display: flex;
-    justify-content: center;
-    gap: 80px; /* Espacio entre tarjetas */
-    flex-wrap: wrap; /* Ajusta las tarjetas si el espacio es pequeño */
+    /*justify-content: center;*/
+    gap: 80px;
+    /* Espacio entre tarjetas */
+    flex-wrap: wrap;
+    /* Ajusta las tarjetas si el espacio es pequeño */
     margin-top: 20px;
 }
 
@@ -38,9 +52,10 @@ body {
     padding: 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center; /* Centra el texto */
-    flex-direction: column; /* Apila los elementos dentro de la tarjeta */
+    text-align: center;
+    /* Centra el texto */
+    flex-direction: column;
+    /* Apila los elementos dentro de la tarjeta */
     transition: transform 0.3s, box-shadow 0.3s;
     border-color: #2ecc71;
 }
@@ -57,7 +72,8 @@ body {
     color: #ffffff;
     margin: 0;
     font-size: 20px;
-    line-height: 1.6; /* Espaciado entre líneas */
+    line-height: 1.6;
+    /* Espaciado entre líneas */
     font-family: sans-serif;
 }
 
@@ -66,7 +82,8 @@ body {
     color: #ffffff;
     margin: 0;
     font-size: 1rem;
-    line-height: 1.6; /* Espaciado entre líneas */
+    line-height: 1.6;
+    /* Espaciado entre líneas */
     font-family: sans-serif;
 }
 
@@ -93,7 +110,8 @@ footer {
     align-items: center;
     justify-content: center;
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    background-color: #27ae60; /* Color del borde */
+    background-color: #27ae60;
+    /* Color del borde */
 }
 
 /* Botones tipo rombo */
@@ -139,14 +157,22 @@ footer {
     text-shadow: 0 0 5px #27ae60;
 }
 
+.footer {
+
+    display: flex;
+    height: 100%;
+}
+
 /* Media Query para pantallas pequeñas (móviles) */
 @media (max-width: 768px) {
     .cards-container {
-        gap: 15px; /* Reducir el espacio entre las cartas */
+        gap: 15px;
+        /* Reducir el espacio entre las cartas */
     }
 
     .card {
-        width: 160px; /* Reducir el tamaño de las cartas en pantallas pequeñas */
+        width: 160px;
+        /* Reducir el tamaño de las cartas en pantallas pequeñas */
         height: 200px;
     }
 
@@ -157,6 +183,7 @@ footer {
     .card-p2 {
         font-size: 12px;
     }
+
     .colorTitulo {
         font-size: 26px;
     }
@@ -165,11 +192,13 @@ footer {
 /* Media Query para pantallas muy pequeñas (celulares en modo vertical) */
 @media (max-width: 480px) {
     .cards-container {
-        gap: 10px; /* Reducir aún más el espacio entre las cartas */
+        gap: 10px;
+        /* Reducir aún más el espacio entre las cartas */
     }
 
     .card {
-        width: 140px; /* Reducir aún más el tamaño de las cartas */
+        width: 140px;
+        /* Reducir aún más el tamaño de las cartas */
         height: 180px;
     }
 

@@ -9,24 +9,176 @@ body {
     align-items: center;
     min-height: 100vh;
     padding: 10px;
+    flex-direction: column;
 }
 
-form {
-    background-color: #34495e;
-    padding: 20px;
-    border-radius: 30px; /* Bordes más redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 400px; /* Limitar ancho máximo */
+.tiltle {
+
+    color: #58bc82;
+    height: 10px;
+    margin-left: 80px;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 100px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    margin-bottom: 74px;
+}
+
+h1 {
+
+    margin: 0;
+    font-size: 50px;
+
+}
+
+/* From Uiverse.io by bociKond */
+.form {
+    --bg-light: #efefef;
+    --bg-dark: #707070;
+    --clr: #58bc82;
+    --clr-alpha: #9c9c9c60;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centrar elementos dentro del formulario */
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 300px;
 }
 
-img {
-    max-width: 100px; /* Tamaño del logo */
+.form .input-span {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form input[type="email"],
+.form input[type="password"],
+.form input[type="name"],
+.form input[type="URLProfileIMG"] {
+    border-radius: 0.5rem;
+    padding: 1rem 0.75rem;
+    width: 100%;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--clr-alpha);
+    outline: 2px solid var(--bg-dark);
+}
+
+.form input[type="email"]:focus,
+.form input[type="password"]:focus,
+.form input[type="name"]:focus,
+.form input[type="URLProfileIMG"]:focus {
+    outline: 2px solid var(--clr);
+}
+
+.label {
+    align-self: flex-start;
+    color: var(--clr);
+    font-weight: 600;
+}
+
+.form .submit {
+    padding: 1rem 0.75rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 3rem;
+    background-color: var(--bg-dark);
+    color: var(--bg-light);
+    border: none;
+    cursor: pointer;
+    transition: all 300ms;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.form .submit:hover {
+    background-color: var(--clr);
+    color: var(--bg-dark);
+}
+
+.span {
+    text-decoration: none;
+    color: var(--bg-dark);
+}
+
+.span a {
+    color: var(--clr);
+}
+
+footer {
+
+    margin: 10px;
+
+}
+
+/* Media Query para dispositivos pequeños */
+@media (max-width: 600px) {
+    .form {
+        padding: 15px;
+        border-radius: 20px;
+        /* Ajustes para pantallas pequeñas */
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        /* Ajusta el tamaño del título en pantallas pequeñas */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*img {
+    max-width: 100px;
+    /* Tamaño del logo
     margin-bottom: 20px;
-    border-radius: 50%; /* Logo circular */
+    border-radius: 50%;
+    /* Logo circular
 }
 
 label {
@@ -34,7 +186,8 @@ label {
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
-    align-self: flex-start; /* Alinear los labels a la izquierda */
+    align-self: flex-start;
+    /* Alinear los labels a la izquierda
 }
 
 input[type="email"],
@@ -44,7 +197,8 @@ input[type="text"] {
     padding: 10px;
     margin-bottom: 15px;
     border: 2px solid #2ecc71;
-    border-radius: 20px; /* Esquinas redondeadas */
+    border-radius: 20px;
+    /* Esquinas redondeadas
     background-color: #2c3e50;
     color: white;
     box-sizing: border-box;
@@ -61,7 +215,8 @@ input[type="submit"] {
     width: 100%;
     padding: 10px;
     border: none;
-    border-radius: 20px; /* Más redondeado */
+    border-radius: 20px;
+    /* Más redondeado
     background-color: #2c3e50;
     color: white;
     font-weight: bold;
@@ -77,14 +232,17 @@ input[type="submit"]:hover {
 @media (max-width: 600px) {
     form {
         padding: 15px;
-        border-radius: 20px; /* Ajustar para pantallas pequeñas */
+        border-radius: 20px;
+         Ajustar para pantallas pequeñas
     }
+
     img {
         max-width: 80px;
     }
+
     button,
     input[type="text"] {
         padding: 8px;
         border-radius: 15px;
     }
-}
+}*/
