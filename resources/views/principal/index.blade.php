@@ -58,6 +58,7 @@
     <br>
     <h2 class="colorTitulo">¿Quiénes somos?</h2>
     <br>
+    <br>
 
     <div class="cards-container">
         <div class="card">
@@ -67,6 +68,8 @@
             </p>
         </div>
     </div>
+    <br>
+    <br>
     <br>
     <br>
     <h2 class="colorTitulo">¿Que puedes encontrar en nuestra pagina?</h2>

@@ -6,31 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    @vite([
+    @vite(
         // CSS
-        'resources/css/login/index.css',
-    ])
+        'resources/css/login/index.css'
+    )
 
     <title>Iniciar Sesion</title>
 </head>
 
 <body>
-    <form action="{{ route('login.check') }}" method="post">
+    <h1 class="tiltle">Inicia sesion en FAC</h1>
+    <br>
+    <br>
+    <br>
+    <form action="{{ route('login.check') }}" method="post" class="form">
         @csrf
 
-        <div>
-            <label>Correo Electronico:</label>
+        <span class="input-span">
+            <label class="label">Correo Electronico:</label>
             <input type="email" placeholder="Ingresa tu correo electronico" name="email" required>
-        </div>
+        </span>
 
-        <div>
-            <label>Contraseña:</label>
+        <span class="input-span">
+            <label class="label">Contraseña:</label>
             <input type="password" placeholder="Ingresa tu contraseña" name="password" required>
-        </div>
-		
+        </span>
+
         <!-- Usa input submit en vez de botones, es buenas practicas y funciona mejor. -->
-        <input type="submit" value="Iniciar Sesion"> 
+        <br>
+        <input type="submit" value="Iniciar Sesion" class="submit">
     </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    @include('principal/footer')
 </body>
 
 </html>

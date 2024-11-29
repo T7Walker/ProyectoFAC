@@ -2,7 +2,7 @@
     @vite([
         //CSS
         'resources/css/principal/navbar.css',
-
+    
         // JS
         'resources/js/principal/navbar.js',
     ])
@@ -32,9 +32,9 @@
 
                 <form action="{{ route('login.logout') }}" method="POST">
                     @csrf
-					
-					<!-- Usa input submit en vez de botones, es buenas practicas y funciona mejor. -->
-                    <input type="submit" value="Cerrar Sesion">
+
+                    <!-- Usa input submit en vez de botones, es buenas practicas y funciona mejor. -->
+                    <input type="submit" value="Cerrar Sesion" class="modalButton">
                 </form>
             </div>
         </div>
@@ -55,7 +55,7 @@
 
             <p>Nombre de Usuario
                 <br>
-                <strong>User</strong>
+                <strong>user</strong>
             </p>
 
             <button class="edit-profile-btn">Editar Perfil</button>
@@ -71,8 +71,8 @@
 
                     <label for="URLProfileIMG">URL de la foto de perfil:</label>
                     <input type="text" name="URLProfileIMG" id="URLProfileIMG" required>
-					
-					<!-- Usa input submit en vez de botones, es buenas practicas y funciona mejor. -->
+
+                    <!-- Usa input submit en vez de botones, es buenas practicas y funciona mejor. -->
                     <input type="submit" value="Guardar Cambios">
                 </form>
 
@@ -82,8 +82,8 @@
             <form action="{{ route('profile.delUser') }}" method="POST"
                 onsubmit="return confirm('¿Estás seguro de que deseas eliminar tu perfil?');">
                 @csrf
-				
-				<!-- Usa input submit en vez de botones, es buenas practicas y funciona mejor. -->
+
+                <!-- Usa input submit en vez de botones, es buenas practicas y funciona mejor. -->
                 <input type="submit" value="Eliminar Perfil">
             </form>
         </div>

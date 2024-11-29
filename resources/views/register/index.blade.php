@@ -44,6 +44,7 @@
         <!-- Usa input submit en vez de botones, es buenas practicas y funciona mejor. -->
         <input type="submit" value="Registrarse" class="submit">
     </form>
+    <br><br>
     @include('principal/footer')
 </body>
 

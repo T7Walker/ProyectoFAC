@@ -8,13 +8,13 @@
 
 /* Navbar styling */
 .navbar {
-    width: 100%;
+    width: 90%;
     height: 70px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
     position: fixed;
     top: 0;
     z-index: 100;
@@ -128,6 +128,17 @@
     z-index: 200;
     align-items: center;
     justify-content: center;
+}
+
+.modalButton {
+
+    color: #000000;
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+    background-color: #fff;
+
+
 }
 
 .modal-content {
