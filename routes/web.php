@@ -4,6 +4,8 @@ use App\Http\Controllers\Register;
 use App\Http\Controllers\Login;
 use App\Http\Controllers\Profile;
 use App\Http\Controllers\MainPage;
+use App\Http\Controllers\PublicationController;
+use App\Http\Controllers\BooksController;
 use Illuminate\Support\Facades\Route;
 
 /*	
@@ -11,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 	- Get es para enviar datos.
 	- Post es para recibir e interpretar los datos. Ya sea en js o en controllers.
  */
+
 Route::get('/register', [Register::class, 'index'])->name('register.index'); // Solo es el formulario
 Route::post('/register/save-user', [Register::class, 'store'])->name('register.saveUser'); // Manda los datos del formulario para interpretarse.
 
@@ -32,7 +35,23 @@ Route::get('/', [MainPage::class, 'index'])->name('mainPage.index'); // Vista de
 Route::post('/profile/updateData', [Profile::class, 'update'])->name('profile.updateData'); // Envia los cambios hechos del perfil para interpretarse.
 Route::post('/profile/delUser', [Profile::class, 'deleted'])->name('profile.delUser'); // Enviar datos de eliminacion para interpretarse.
 
-
+/*
+    Todo lo de publicaciones
+*/
+Route::get('Publications/allPublication', [PublicationController::class, 'all'])->name('Publications.Publication'); //todas las publicaciones
+Route::get('Publications/viewPublication/{id}',  [PublicationController::class, 'show'])->name('Publications.viewPublication'); //ver la publicacion
+Route::get('Publications/createPost', [PublicationController::class, 'create'])->name('Publications.createPost'); //pagina para crear publicaciones
+Route::post('Publications/infoPublication', [PublicationController::class, 'store'])->name('Publications.infoPublication'); //formulario de la publicacion
+Route::post('Publications/editPublication/{id}', [PublicationController::class, 'edit'])->name('Publications.editPublication'); //editar publicaion
+Route::post('Publications/deletePublication/{id}', [PublicationController::class, 'destroy'])->name('Publications.deletePublication'); //borrar publicacion
+/*
+	Todo lo de libros
+*/
+Route::get('Books/allBooks', [BooksController::class, 'all'])->name('');
+Route::get('Books/pushBooks', [BooksController::class, 'push'])->name('Books.pushBook'); //pagina para subir libros
+Route::post('Books/infoBooks', [BooksController::class, 'store'])->name('Books.infoBook'); //formulario para subir libros
+Route::post('Books/editBooks/{id}', [BooksController::class, 'edit'])->name('Books.editBooks'); //editar libro
+Route::post('Books/deleteBook/{id}', [BooksController::class, 'destroy'])->name('Books.deleteBook');//borrar libro
 
 
 /* Codigo antiguo guardado por si algo  */
