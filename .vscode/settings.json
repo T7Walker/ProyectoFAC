@@ -42,7 +42,7 @@
         "editor.tabSize": 4
     },
     "[php]": {
-        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+        "editor.defaultFormatter": "DEVSENSE.phptools-vscode",
         "editor.useTabStops": false,
         "editor.tabSize": 4
     },

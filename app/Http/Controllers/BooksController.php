@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Libro;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use App\Http\Controllers\MainPage;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
@@ -13,8 +11,9 @@ class BooksController
 {
     public function push()
     {
+        $user = Auth::user();
 
-        return view("Books.pushBooks");
+        return view("Books.pushBooks", ['userData' => $user]);
     }
 
     public function store(Request $rqs)
@@ -33,22 +32,29 @@ class BooksController
 
         ]);
 
-        return redirect()->route('Books.allBooks')->with('success', 'pushBookSucess');
+        $user = Auth::user();
+
+        return redirect()->route('Books.allBooks', ['userData' => $user])->with('success', 'pushBookSucess');
     }
 
     public function all()
     {
 
         $book = Libro::all();
-        return view('Books.allBooks', ['book' => $book]);
+        $user = Auth::user();
+
+        return view('Books.allBooks', ['book' => $book, 'userData' => $user]);
     }
 
     public function show($id)
     {
 
         $book = Libro::findOrFail($id);
-        return view('Books.viewBooks', compact(''));
+        $user = Auth::user();
+
+        return view('Books.viewBooks', ['userData' => $user]);
     }
+
     public function edit(Request $rqs, $id)
     {
 
@@ -59,7 +65,9 @@ class BooksController
 
         $book->save();
 
-        return redirect()->route('Books.allbooks')->with('success', 'bookEdited');
+        $user = Auth::user();
+
+        return redirect()->route('Books.allbooks', ['userData' => $user])->with('success', 'bookEdited');
     }
 
     public function destroy($id)
@@ -68,12 +76,8 @@ class BooksController
         $book = Libro::findOrFail($id);
         $book->delete();
 
-        return redirect()->route('Books.allBooks')->with('success', 'bookEliminated');
-    }
-    public function indexNavBar()
-    {
-
         $user = Auth::user();
-        return view('Books.allBooks', ['userData' => $user]);
+
+        return redirect()->route('Books.allBooks', ['userData' => $user])->with('success', 'bookEliminated');
     }
 }
