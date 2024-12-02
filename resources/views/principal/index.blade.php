@@ -32,7 +32,7 @@
         </div>
         <div class="rombo-wrapper">
             <div class="rombo-button">
-                <a href=""></a>
+                <a href="{{ route('Books.allBooks') }}"></a>
                 <div class="rombo-content">
                     <img src="https://i.imgur.com/AFLjO3z.png" alt="Libros">
                     <p>Libros</p>

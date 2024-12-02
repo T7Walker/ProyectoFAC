@@ -47,10 +47,16 @@ Route::post('Publications/deletePublication/{id}', [PublicationController::class
 /*
 	Todo lo de libros
 */
-Route::get('Books/allBooks', [BooksController::class, 'all'])->name('');
+Route::get('Books/allBooks', [BooksController::class, 'all'])->name('Books.allBooks'); //pagina para ver todos los libros 
+
+Route::get('Books/viewBooks/{id}', [BooksController::class, 'show'])->name('Books.viewBooks'); //pagina para ver los libros
+
 Route::get('Books/pushBooks', [BooksController::class, 'push'])->name('Books.pushBook'); //pagina para subir libros
+
 Route::post('Books/infoBooks', [BooksController::class, 'store'])->name('Books.infoBook'); //formulario para subir libros
+
 Route::post('Books/editBooks/{id}', [BooksController::class, 'edit'])->name('Books.editBooks'); //editar libro
+
 Route::post('Books/deleteBook/{id}', [BooksController::class, 'destroy'])->name('Books.deleteBook');//borrar libro
 
 

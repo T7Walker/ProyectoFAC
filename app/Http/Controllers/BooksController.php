@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Libro;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Controllers\MainPage;
+use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
 class BooksController
@@ -67,5 +69,11 @@ class BooksController
         $book->delete();
 
         return redirect()->route('Books.allBooks')->with('success', 'bookEliminated');
+    }
+    public function indexNavBar()
+    {
+
+        $user = Auth::user();
+        return view('Books.allBooks', ['userData' => $user]);
     }
 }

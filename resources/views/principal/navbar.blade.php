@@ -64,13 +64,13 @@
                 <form action="{{ route('profile.updateData') }}" method="POST">
                     @csrf
                     <label for="name">Nombre:</label>
-                    <input type="text" name="name" id="name" value="{{ $userData->name }}" required>
+                    <input type="text" name="name" id="name" value="{{ $userData->name }}">
 
                     <label for="email">Correo:</label>
-                    <input type="email" name="email" id="email" value="{{ $userData->email }}" required>
+                    <input type="email" name="email" id="email" value="{{ $userData->email }}">
 
-                    <label for="URLProfileIMG">URL de la foto de perfil:</label>
-                    <input type="text" name="URLProfileIMG" id="URLProfileIMG" required>
+                    <label for="urlimg">URL de la foto de perfil:</label>
+                    <input type="text" name="urlimg" id="urlimg" value="{{ $userData->urlimg }}">
 
                     <!-- Usa input submit en vez de botones, es buenas practicas y funciona mejor. -->
                     <input type="submit" value="Guardar Cambios">

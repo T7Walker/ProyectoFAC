@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\Publicacion;
+use Illuminate\Support\Facades\Auth;
 
 class PublicationController
 {
@@ -65,5 +66,11 @@ class PublicationController
         $publication->delete();
 
         return redirect()->route('Publications.allPublication')->with('success', 'publicationEliminated');
+    }
+    public function indexNavBar()
+    {
+
+        $user = Auth::user();
+        return view('Publications.allPublication', ['userData' => $user]);
     }
 }
