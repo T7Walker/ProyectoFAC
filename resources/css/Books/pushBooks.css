@@ -1,0 +1,151 @@
+* {
+
+    background-color: #1c2544;
+
+}
+
+body {
+    background-color: #1c2544;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+
+    min-height: 100vh;
+    padding: 0px;
+    flex-direction: column;
+
+}
+
+.contedorForm {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.tamañoDescription {
+    width: 100%;
+    /* Ocupa todo el ancho disponible */
+    height: 200px;
+    /* Altura ajustada */
+    padding: 10px;
+    /* Espacio interior */
+    resize: vertical;
+    /* Permite ajustar solo la altura */
+}
+
+.tiltle {
+
+    color: #32cd32;
+    height: 10px;
+    margin-left: 80px;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 100px;
+    display: flex;
+    align-items: center;
+
+    text-align: center;
+    margin-bottom: 74px;
+}
+
+h1 {
+
+    margin: 0;
+    font-size: 50px;
+
+}
+
+/* From Uiverse.io by bociKond */
+.form {
+    --bg-light: #efefef;
+    --bg-dark: #394d9c;
+    --clr: #32cd32;
+    --clr-alpha: #394d9c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 300px;
+}
+
+.form .input-span {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form input[type="text"] {
+    border-radius: 0.5rem;
+    padding: 1rem 0.75rem;
+    width: 100%;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--clr-alpha);
+    outline: 2px solid var(--bg-dark);
+}
+
+.form input[type="text"]:focus {
+    outline: 2px solid var(--clr);
+}
+
+.label {
+    align-self: flex-start;
+    color: var(--clr);
+    font-weight: 600;
+}
+
+.form .submit {
+    padding: 1rem 0.75rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 3rem;
+    background-color: var(--bg-dark);
+    color: var(--bg-light);
+    border: none;
+    cursor: pointer;
+    transition: all 300ms;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.form .submit:hover {
+    background-color: var(--clr);
+    color: var(--bg-dark);
+}
+
+.span {
+    text-decoration: none;
+    color: var(--bg-dark);
+}
+
+.span a {
+    color: var(--clr);
+}
+
+footer {
+
+    margin: 10px;
+
+}
+
+/* Media Query para dispositivos pequeños */
+@media (max-width: 600px) {
+    .form {
+        padding: 15px;
+        border-radius: 20px;
+        /* Ajustes para pantallas pequeñas */
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        /* Ajusta el tamaño del título en pantallas pequeñas */
+    }
+}

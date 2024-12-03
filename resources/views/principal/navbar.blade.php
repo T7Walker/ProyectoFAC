@@ -28,7 +28,7 @@
             </div>
 
             <div class="profile-dropdown">
-                <a class="open-profile-modal">Mi Perfil</a>
+                <a class="open-profile-modal" class="modalButton">Mi Perfil</a>
 
                 <form action="{{ route('login.logout') }}" method="POST">
                     @csrf

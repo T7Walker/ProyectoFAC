@@ -5,31 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subir libro</title>
-    @vite(['resources/css/pushBooks/index.css'])
+    @vite(['resources/css/Books/pushBooks.css'])
 </head>
 
 <body>
     @include('principal.navbar')
 
-    <form action="{{ route('Books.infoBook') }}" method="POST" enctype="multipart/form-data">
+    <div class="contedorForm">
 
-        @csrf
-        <label>Pon el titulo del libro</label>
+        <form action="{{ route('Books.infoBook') }}" method="POST" enctype="multipart/form-data" class="form">
 
-        <input type="text" name="tiltle">
-        <br>
+            @csrf
+            <span class="input-span">
+                <label class="label">Pon el titulo del libro</label>
+                <input type="text" name="title">
+            </span>
+            <br>
+            <span class="input-span">
+                <label class="label">Url del libro</label>
+                <input type="text" name="url">
+            </span>
+            <br>
 
-        <label>Url del libro</label>
 
-        <input type="text" name="url">
-        <br>
-
-        <label>Ponle una descripcion</label>
-
-        <input type="text" name="description">
-        <br>
-
-        <button type="submit">Publicar</button>
+            <button type="submit" class="submit">Publicar</button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer>
+        @include('principal.footer')
+    </footer>
 
 </body>
 

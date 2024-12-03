@@ -14,8 +14,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-
-    position: fixed;
+    text-align: center;
+    position: static;
     top: 0;
     z-index: 100;
 }

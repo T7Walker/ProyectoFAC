@@ -19,13 +19,13 @@ class BooksController
     public function store(Request $rqs)
     {
 
-        $tiltle = $rqs->input("tiltle");
+        $tiltle = $rqs->input("title");
         $url = $rqs->input("url");
 
         Libro::create([
 
 
-            "tiltle" => $rqs->input("tiltle"),
+            "title" => $rqs->input("title"),
             "url" => $rqs->input("url"),
             'date_creation' => Carbon::now()
 
