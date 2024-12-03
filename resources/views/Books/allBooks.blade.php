@@ -19,15 +19,14 @@
                 <tr>
                     <th>Titulo</th>
                     <th>URL del libro</th>
-                    <th>descripcion</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($book as $book)
+                @foreach ($books as $book)
                     <tr>
-                        <td>{{ $book->tilte }}
+                        <td>{{ $book->title }}
                         </td>
-                        <td>{{ $book->bookURL }}</td>
+                        <td>{{ $book->url }}</td>
                         <td class="actions">
                             <a href="{{ route('Books.viewBooks', $book->id) }}">Mira el libro</a>
                             <a href="{{ route('Books.editBooks', $book->id) }}">Editalo</a>
@@ -43,6 +42,13 @@
             </tbody>
         </table>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    @include('principal.footer')
 </body>
 
 </html>

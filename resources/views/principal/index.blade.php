@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script>
+        const booksPage = "{{ route('Books.allBooks') }}";
+        const mapPage = ""; //hola harold, esta es el boton para ir al mapa, si algo
+        const publicationsPage = "{{ route('Publications.allPublication') }}";
+    </script>
     @vite([
         //CSS
         'resources/css/principal/index.css',
@@ -21,7 +26,7 @@
     <p class="colorTitulo">{{ $userData->name }}</p>
 
     <div class="rombo-button-container">
-        <div class="rombo-wrapper">
+        <div class="rombo-wrapper" id="map">
             <div class="rombo-button">
                 <a href=""></a>
                 <div class="rombo-content">
@@ -30,7 +35,7 @@
                 </div>
             </div>
         </div>
-        <div class="rombo-wrapper">
+        <div class="rombo-wrapper" id="books">
             <div class="rombo-button">
                 <a href="{{ route('Books.allBooks') }}"></a>
                 <div class="rombo-content">
@@ -39,12 +44,12 @@
                 </div>
             </div>
         </div>
-        <div class="rombo-wrapper">
+        <div class="rombo-wrapper" id="publications">
             <div class="rombo-button">
                 <a href=""></a>
                 <div class="rombo-content">
-                    <img src="https://i.imgur.com/CajBXxF.png" alt="Rutas">
-                    <p>Rutas</p>
+                    <img src="https://i.imgur.com/KXlAdfn.png" alt="Rutas">
+                    <p>Posts</p>
                 </div>
             </div>
         </div>

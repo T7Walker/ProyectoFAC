@@ -1,0 +1,107 @@
+/* Reset y configuraciones base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Fondo del cuerpo */
+body,
+html {
+    background-color: #1c2544;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    padding: 20px;
+    position: sticky;
+    bottom: 0;
+}
+
+body {
+
+    flex: 1;
+}
+
+/* Estilo de los títulos */
+.colorTitulo {
+    color: #32cd32;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 50px;
+}
+
+/* From Uiverse.io by satyamchaudharydev */
+/* === removing default button style ===*/
+.button {
+    margin: 0;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+
+/* button styling */
+.button {
+    --border-right: 6px;
+    --text-stroke-color: rgba(255, 255, 255, 0.6);
+    --animation-color: #32cd32;
+    --fs-size: 2em;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+
+/* this is the text, when you hover on button */
+.hover-text {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+}
+
+/* hover */
+.button:hover .hover-text {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--animation-color))
+}
+
+/* From Uiverse.io by mrhyddenn */
+.shadow__btn {
+    padding: 10px 20px;
+    border: none;
+    font-size: 17px;
+    color: #fff;
+    border-radius: 7px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.5s;
+    transition-property: box-shadow;
+}
+
+.shadow__btn {
+    background: #32cd32;
+    box-shadow: 0 0 25px #32cd32;
+}
+
+.shadow__btn:hover {
+    box-shadow: 0 0 5px #32cd32,
+        0 0 25px #32cd32,
+        0 0 50px #32cd32,
+        0 0 100px #32cd32;
+}

@@ -12,7 +12,7 @@ class PublicationController
     public function create()
     {
 
-        return view("Publications.createPost");
+        return view("Publications.createPost", );
     }
 
     public function store(Request $rqs)
@@ -73,4 +73,5 @@ class PublicationController
         $user = Auth::user();
         return view('Publications.allPublication', ['userData' => $user]);
     }
+
 }

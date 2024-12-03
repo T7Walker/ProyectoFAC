@@ -2,7 +2,7 @@
     @vite([
         //CSS
         'resources/css/principal/navbar.css',
-    
+
         // JS
         'resources/js/principal/navbar.js',
     ])
@@ -23,8 +23,7 @@
         <!-- Profile Section -->
         <div class="navbar-profile-container">
             <div class="navbar-profile">
-                <img src="https://preview.redd.it/kefla-dragon-ball-super-akaicabbage-v0-txgvcnopre0a1.jpg?auto=webp&s=8d0cd6894b7a756079d92b3f378c25d8d830ca99"
-                    alt="Foto de Perfil">
+                <img src="https://pbs.twimg.com/media/FZraIZmWIAEX8hd.jpg" alt="Foto de Perfil">
             </div>
 
             <div class="profile-dropdown">
@@ -50,8 +49,8 @@
             <h2>Perfil de Usuario</h2>
             <br>
 
-            <img src="https://preview.redd.it/kefla-dragon-ball-super-akaicabbage-v0-txgvcnopre0a1.jpg?auto=webp&s=8d0cd6894b7a756079d92b3f378c25d8d830ca99"
-                alt="Foto de perfil" style="border-radius: 50%; margin-bottom: 20px;">
+            <img src="https://pbs.twimg.com/media/FZraIZmWIAEX8hd.jpg" alt="Foto de perfil"
+                style="border-radius: 50%; margin-bottom: 20px;">
 
             <p>Nombre de Usuario
                 <br>

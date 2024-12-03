@@ -8,29 +8,29 @@ use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\BooksController;
 use Illuminate\Support\Facades\Route;
 
-/*	
-	Todo lo del registro, recuerda que:
-	- Get es para enviar datos.
-	- Post es para recibir e interpretar los datos. Ya sea en js o en controllers.
+/*
+    Todo lo del registro, recuerda que:
+    - Get es para enviar datos.
+    - Post es para recibir e interpretar los datos. Ya sea en js o en controllers.
  */
 
 Route::get('/register', [Register::class, 'index'])->name('register.index'); // Solo es el formulario
 Route::post('/register/save-user', [Register::class, 'store'])->name('register.saveUser'); // Manda los datos del formulario para interpretarse.
 
-/* 
-	Todo lo de login
+/*
+    Todo lo de login
  */
 Route::get('/login', [Login::class, 'index'])->name('login.index'); // Vista del login y formulario
 Route::post('/login/check', [Login::class, 'login'])->name('login.check'); // Revision del login y autenticacion
 Route::post('/logout', [Login::class, 'logout'])->name('login.logout'); // Cerrar sesion del usuario
 
 /*
-	Todo de la pagina principal
+    Todo de la pagina principal
 */
 Route::get('/', [MainPage::class, 'index'])->name('mainPage.index'); // Vista de la pagina principal.
 
 /*
-	Todo lo del perfil
+    Todo lo del perfil
 */
 Route::post('/profile/updateData', [Profile::class, 'update'])->name('profile.updateData'); // Envia los cambios hechos del perfil para interpretarse.
 Route::post('/profile/delUser', [Profile::class, 'deleted'])->name('profile.delUser'); // Enviar datos de eliminacion para interpretarse.
@@ -38,8 +38,8 @@ Route::post('/profile/delUser', [Profile::class, 'deleted'])->name('profile.delU
 /*
     Todo lo de publicaciones
 */
-Route::get('Publications/allPublication', [PublicationController::class, 'all'])->name('Publications.Publication'); //todas las publicaciones
-Route::get('Publications/viewPublication/{id}',  [PublicationController::class, 'show'])->name('Publications.viewPublication'); //ver la publicacion
+Route::get('Publications/allPublication', [PublicationController::class, 'all'])->name('Publications.allPublication'); //todas las publicaciones
+Route::get('Publications/viewPublication/{id}', [PublicationController::class, 'show'])->name('Publications.viewPublication'); //ver la publicacion
 Route::get('Publications/createPost', [PublicationController::class, 'create'])->name('Publications.createPost'); //pagina para crear publicaciones
 Route::post('Publications/infoPublication', [PublicationController::class, 'store'])->name('Publications.infoPublication'); //formulario de la publicacion
 Route::post('Publications/editPublication/{id}', [PublicationController::class, 'edit'])->name('Publications.editPublication'); //editar publicaion
@@ -47,7 +47,7 @@ Route::post('Publications/deletePublication/{id}', [PublicationController::class
 /*
 	Todo lo de libros
 */
-Route::get('Books/allBooks', [BooksController::class, 'all'])->name('Books.allBooks'); //pagina para ver todos los libros 
+Route::get('Books/allBooks', [BooksController::class, 'all'])->name('Books.allBooks'); //pagina para ver todos los libros
 
 Route::get('Books/viewBooks/{id}', [BooksController::class, 'show'])->name('Books.viewBooks'); //pagina para ver los libros
 

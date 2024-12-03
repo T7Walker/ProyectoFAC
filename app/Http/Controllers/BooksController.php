@@ -40,10 +40,10 @@ class BooksController
     public function all()
     {
 
-        $book = Libro::all();
+        $books = Libro::all();
         $user = Auth::user();
 
-        return view('Books.allBooks', ['book' => $book, 'userData' => $user]);
+        return view('Books.allBooks', ['books' => $books, 'userData' => $user]);
     }
 
     public function show($id)
@@ -52,7 +52,7 @@ class BooksController
         $book = Libro::findOrFail($id);
         $user = Auth::user();
 
-        return view('Books.viewBooks', ['userData' => $user]);
+        return view('Books.viewBooks', ['book' => $book, 'userData' => $user]);
     }
 
     public function edit(Request $rqs, $id)
