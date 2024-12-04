@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\Register;
+use App\Http\Controllers\Map;
 use App\Http\Controllers\Login;
 use App\Http\Controllers\Profile;
 use App\Http\Controllers\MainPage;
-use App\Http\Controllers\PublicationController;
-use App\Http\Controllers\BooksController;
+use App\Http\Controllers\Register;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BooksController;
+use App\Http\Controllers\PublicationController;
 
 /*
     Todo lo del registro, recuerda que:
@@ -48,17 +49,16 @@ Route::post('Publications/deletePublication/{id}', [PublicationController::class
 	Todo lo de libros
 */
 Route::get('Books/allBooks', [BooksController::class, 'all'])->name('Books.allBooks'); //pagina para ver todos los libros
-
 Route::get('Books/viewBooks/{id}', [BooksController::class, 'show'])->name('Books.viewBooks'); //pagina para ver los libros
-
 Route::get('Books/pushBooks', [BooksController::class, 'push'])->name('Books.pushBook'); //pagina para subir libros
-
 Route::post('Books/infoBooks', [BooksController::class, 'store'])->name('Books.infoBook'); //formulario para subir libros
-
 Route::post('Books/editBooks/{id}', [BooksController::class, 'edit'])->name('Books.editBooks'); //editar libro
-
 Route::post('Books/deleteBook/{id}', [BooksController::class, 'destroy'])->name('Books.deleteBook');//borrar libro
 
+/*
+    Todo del mapa
+*/
+Route::get('/map', [Map::class, 'index'])->name('map.mainPage');
 
 /* Codigo antiguo guardado por si algo  */
 

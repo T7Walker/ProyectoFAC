@@ -1,0 +1,35 @@
+#map {
+    width: 100%;
+    height: 100vh;
+}
+
+.map-controls {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    display: flex;
+    gap: 10px;
+}
+
+.map-controls button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#safe-routes {
+    background-color: green;
+    color: white;
+}
+
+#medium-routes {
+    background-color: yellow;
+    color: black;
+}
+
+#dangerous-routes {
+    background-color: red;
+    color: white;
+}
