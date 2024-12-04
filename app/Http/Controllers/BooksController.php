@@ -60,7 +60,7 @@ class BooksController
 
         $book = Libro::find($id);
 
-        $book->tiltle = $rqs->input('tiltle');
+        $book->title = $rqs->input('title');
         $book->url = $rqs->input('url');
 
         $book->save();

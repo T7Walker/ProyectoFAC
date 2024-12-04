@@ -2,7 +2,7 @@
     @vite([
         //CSS
         'resources/css/principal/navbar.css',
-
+    
         // JS
         'resources/js/principal/navbar.js',
     ])
@@ -11,7 +11,7 @@
 <header>
     <nav class="navbar">
         <!-- Logo -->
-        <a href="#" class="navbar-logo">
+        <a class="navbar-logo" id="logo">
             <img src="https://i.imgur.com/Kw841ke.png" alt="Logo">
         </a>
 

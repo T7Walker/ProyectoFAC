@@ -23,7 +23,8 @@
     align-items: center;
     flex-wrap: wrap;
     height: 100%;
-    margin-left: 8%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .footer-left {

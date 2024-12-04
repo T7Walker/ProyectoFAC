@@ -30,7 +30,16 @@ body {
     color: #32cd32;
     text-align: center;
     margin-bottom: 20px;
-    font-size: 50px;
+    font-size: 70px;
+}
+
+.colorNombre {
+
+    color: #32cd32;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 70px;
+
 }
 
 /* Contenedor de tarjetas */
@@ -113,7 +122,7 @@ footer {
     align-items: center;
     justify-content: center;
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    background-color: #27ae60;
+    background-color: #32cd32;
     /* Color del borde */
 }
 
@@ -157,7 +166,7 @@ footer {
 }
 
 .rombo-wrapper:hover .rombo-content p {
-    text-shadow: 0 0 5px #27ae60;
+    text-shadow: 0 0 5px #32cd32;
 }
 
 .footer {

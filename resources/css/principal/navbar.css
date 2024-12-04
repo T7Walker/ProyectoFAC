@@ -8,14 +8,16 @@
 
 /* Navbar styling */
 .navbar {
-    width: 90%;
+
+    margin-left: 10%;
+    margin-right: 10%;
     height: 70px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
     text-align: center;
-    position: static;
+    position: sticky;
     top: 0;
     z-index: 100;
 }

@@ -13,6 +13,9 @@
     <nav>
         @include ('principal.navBar')
     </nav>
+
+    @include('principal.buttonInicio')
+
     <div class="tamañoTabla">
         <table>
             <thead>
@@ -29,7 +32,9 @@
                         <td>{{ $book->url }}</td>
                         <td class="actions">
                             <a href="{{ route('Books.viewBooks', $book->id) }}">Mira el libro</a>
+
                             <a href="{{ route('Books.editBooks', $book->id) }}">Editalo</a>
+
                             <form action="{{ route('Books.deleteBook', $book->id) }}" method="POST"
                                 onsubmit="return confirm('¿Estás seguro de que deseas eliminar el libro?');">
                                 @csrf
@@ -49,6 +54,7 @@
     <br>
     <br>
     @include('principal.footer')
+
 </body>
 
 </html>

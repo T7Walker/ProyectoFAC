@@ -27,7 +27,6 @@
             </span>
             <br>
 
-
             <button type="submit" class="submit">Publicar</button>
     </div>
     <br>

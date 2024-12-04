@@ -86,7 +86,6 @@ tbody tr:hover {
     background-color: #c0392b;
 }
 
-
 /* Adaptación para móviles */
 @media (max-width: 768px) {
     .tamañoTabla {
@@ -111,7 +110,6 @@ tbody tr:hover {
         width: 100%;
     }
 }
-
 
 @media (max-width: 480px) {
     table {

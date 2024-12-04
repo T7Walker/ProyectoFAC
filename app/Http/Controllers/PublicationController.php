@@ -11,8 +11,9 @@ class PublicationController
 {
     public function create()
     {
+        $user = Auth::user();
 
-        return view("Publications.createPost", );
+        return view("Publications.createPost", ['userData' => $user]);
     }
 
     public function store(Request $rqs)
@@ -36,14 +37,18 @@ class PublicationController
     {
 
         $publication = Publicacion::all();
-        return view('Publications.allPublication', ['publication' => $publication]);
+        $user = Auth::user();
+
+        return view('Publications.allPublication', ['publication' => $publication, 'userData' => $user]);
     }
 
     public function show($id)
     {
 
         $publication = Publicacion::findOrFail($id);
-        return view('Publications.viewPublication', compact('publication'));
+        $user = Auth::user();
+        return view('Publications.viewPublication', ['publication', 'userData' => $user]);
+
     }
     public function edit(Request $rqs, $id)
     {
