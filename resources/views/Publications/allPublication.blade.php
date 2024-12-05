@@ -12,6 +12,11 @@
     <nav>
         @include('principal.navbar')
     </nav>
+
+    <br>
+    @include('principal.buttonInicio')
+    <br>
+
     <div class="tamañoTabla">
         <table>
             <thead>
@@ -23,12 +28,12 @@
             <tbody>
                 @foreach ($publication as $publication)
                     <tr>
-                        <td>{{ $publication->description }}</td>
-                        <td>{{ $publication->imageURL }}</td>
+                        <td>{{ $publication->content }}</td>
+                        <td>{{ $publication->url_file }}</td>
                         <td class="actions">
-                            <a href="{{ route('Publications.viewPublications', $publication->id) }}">Mira el post</a>
-                            <a href="{{ route('Publications.editPublications', $publication->id) }}">Editalo</a>
-                            <form action="{{ route('Publications.delete', $publication->id) }}" method="POST"
+                            <a href="{{ route('Publications.viewPublication', $publication->id) }}">Mira el post</a>
+                            <a href="{{ route('Publications.editPublication', $publication->id) }}">Editalo</a>
+                            <form action="{{ route('Publications.deletePublication', $publication->id) }}" method="POST"
                                 onsubmit="return confirm('¿Estás seguro de que deseas eliminar esta publicacion?');">
                                 @csrf
                                 @method('delete')

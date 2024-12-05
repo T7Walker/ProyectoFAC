@@ -43,10 +43,11 @@ Route::get('Publications/allPublication', [PublicationController::class, 'all'])
 Route::get('Publications/viewPublication/{id}', [PublicationController::class, 'show'])->name('Publications.viewPublication'); //ver la publicacion
 Route::get('Publications/createPost', [PublicationController::class, 'create'])->name('Publications.createPost'); //pagina para crear publicaciones
 Route::post('Publications/infoPublication', [PublicationController::class, 'store'])->name('Publications.infoPublication'); //formulario de la publicacion
-Route::post('Publications/editPublication/{id}', [PublicationController::class, 'edit'])->name('Publications.editPublication'); //editar publicaion
-Route::post('Publications/deletePublication/{id}', [PublicationController::class, 'destroy'])->name('Publications.deletePublication'); //borrar publicacion
+Route::get('Publications/editPublication/{id}', [PublicationController::class, 'edit'])->name('Publications.editPublication'); //editar publicaion
+Route::delete('Publications/deletePublication/{id}', [PublicationController::class, 'destroy'])->name('Publications.deletePublication'); //borrar publicacion
+Route::post('Publications/updatePublication/{id}', [PublicationController::class, 'update'])->name('Publications.updatePublication'); //actualizar publicacion
 /*
-	Todo lo de libros
+    Todo lo de libros
 */
 Route::get('Books/allBooks', [BooksController::class, 'all'])->name('Books.allBooks'); //pagina para ver todos los libros
 Route::get('Books/viewBooks/{id}', [BooksController::class, 'show'])->name('Books.viewBooks'); //pagina para ver los libros
@@ -54,6 +55,7 @@ Route::get('Books/pushBooks', [BooksController::class, 'push'])->name('Books.pus
 Route::post('Books/infoBooks', [BooksController::class, 'store'])->name('Books.infoBook'); //formulario para subir libros
 Route::get('Books/editBooks/{id}', [BooksController::class, 'edit'])->name('Books.editBooks'); //editar libro
 Route::post('Books/deleteBook/{id}', [BooksController::class, 'destroy'])->name('Books.deleteBook');//borrar libro
+Route::post('Books/updateBook/{id}', [BooksController::class, 'update'])->name('Books.updateBook'); //actualizar libro
 
 /*
     Todo del mapa

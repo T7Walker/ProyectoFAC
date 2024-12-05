@@ -21,13 +21,13 @@ class PublicationController
 
         $content = $rqs->input('content');
         $url_file = $rqs->input('url_file');
-        $date = Carbon::parse($content);
+        $date = now();
 
         Publicacion::create([
 
-            'content' => $rqs->input('content'),
-            'url_file' => $rqs->input('url_file'),
-            'date' => $rqs->input('date'),
+            'content' => $content,
+            'url_file' => $url_file,
+            'date' => $date,
 
         ]);
 
@@ -47,12 +47,13 @@ class PublicationController
 
         $publication = Publicacion::findOrFail($id);
         $user = Auth::user();
-        return view('Publications.viewPublication', ['publication', 'userData' => $user]);
+        return view('Publications.viewPublication', ['publication' => $publication, 'userData' => $user]);
 
     }
-    public function edit(Request $rqs, $id)
+    public function update(Request $rqs, $id)
     {
 
+        $user = Auth::user();
         $publication = Publicacion::find($id);
 
         $publication->content = $rqs->input('content');
@@ -61,8 +62,18 @@ class PublicationController
 
         $publication->save();
 
-        return redirect()->route('Publications.allPublication')->with('success', 'publicationEdited');
+        return redirect()->route('Publications.allPublication', ['userData' => $user])->with('success', 'publicationEdited');
     }
+    public function edit($id)
+    {
+        $user = Auth::user();
+        $publication = Publicacion::find($id);
+
+        return view('Publications.editPublication', ['publication' => $publication, 'userData' => $user]);
+
+    }
+
+
 
     public function destroy($id)
     {

@@ -5,6 +5,7 @@
     
         // JS
         'resources/js/principal/navbar.js',
+        'resources/js/Button/inicio.js',
     ])
 </head>
 

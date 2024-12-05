@@ -11,6 +11,10 @@
 <body>
     @include('principal.navbar')
 
+    <br>
+    @include('principal.buttonInicio')
+    <br>
+
     <div class="contedorForm">
 
         <form action="{{ route('Books.infoBook') }}" method="POST" enctype="multipart/form-data" class="form">

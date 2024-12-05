@@ -86,12 +86,14 @@ h1 {
     border: none;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     background-color: var(--clr-alpha);
     outline: 2px solid var(--bg-dark);
 }
 
-.form input[type="text"]:focus {
+.form input[type="text"],
+:focus input[type="date"] {
     outline: 2px solid var(--clr);
 }
 

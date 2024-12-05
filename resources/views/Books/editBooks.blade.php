@@ -9,29 +9,28 @@
 </head>
 
 <body>
+
+    <br>
+    @include('principal.buttonInicio')
+    <br>
+
     <form action="{{ route('Books.editBooks', $books) }}" method="POST">
 
         @csrf
         <label>
             Titulo:
             <br>
-            <input name="name" type="text" value="{{ old('Tiltle', $book->Tiltle) }}">
+            <input name="tilte" type="text" value="{{ old('tilte', $book->Title) }}">
             <br>
         </label>
         <br>
         <label>
             URL del libro:
             <br>
-            <input name="bookURL" type="text" value="{{ old('bookURL', $book->bookURL) }}">
+            <input name="url" type="text" value="{{ old('url', $book->url) }}">
             <br>
         </label>
         <br>
-        <label>
-            Descripcion:
-            <br>
-            <input name="description" type="text" value="{{ old('description', $book->description) }}">
-            <br>
-        </label>
         <br>
         <button type="submit">Actualizar</button>
     </form>

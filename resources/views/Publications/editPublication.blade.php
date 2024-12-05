@@ -1,32 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Publicaciones</title>
+    @vite('resources/css/Publications/editPublication.css')
 </head>
-<body>
-    <form action="{{route('Publications.updatePublication', $publications)}}"  method="POST">
 
-        @csrf
-        @method('put')
-        <label>
-            Descripcion:
+<body>
+    @include('principal.navbar')
+
+    <br>
+    @include('principal.buttonInicio')
+    <br>
+    <h1 class="tiltle">Edita la publicacion</h1>
+    <div class="contedorForm">
+        <form action="{{ route('Publications.updatePublication', $publication) }}" method="POST" class="form">
+
+            @csrf
+            <span class="input-span">
+                <label class="label">
+                    Descripcion:
+                    <input name="content" type="text" value="{{ $publication->content }}" class="form"
+                        class="form expandable-description">
+                </label>
+            </span>
+            <span class="input-span">
+                <label class="label">
+                    URL de la imagen:
+                    <input name="url_file" type="text" value="{{ $publication->url_file }}">
+                </label class="label">
+            </span>
+            <span class="input-span">
+                <label class="label">
+                    fecha:
+                    <input name="date" type="date" value="{{ $publication->date }}">
+                </label>
+            </span>
             <br>
-            <input name="description" type="text" value="{{old('description',$publication->description) }}">
-            <br>
-        </label>
-        <br>
-        <label>
-            URL de la imagen:
-            <br>
-            <input name="imageURL" type="text" value="{{old('imageURL',$publication->bookURL)}}">
-            <br>
-        </label>
-        <br>
-        <button  type="submit">Actualizar</button>
-    </form>
-    
+            <button type="submit" class="submit">Actualizar</button>
+        </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    @include('principal.footer')
 </body>
+
 </html>

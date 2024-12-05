@@ -25,8 +25,8 @@ class BooksController
         Libro::create([
 
 
-            "title" => $rqs->input("title"),
-            "url" => $rqs->input("url"),
+            "title" => $tiltle,
+            "url" => $url,
             'date_creation' => Carbon::now()
 
 
@@ -55,7 +55,7 @@ class BooksController
         return view('Books.viewBooks', ['book' => $book, 'userData' => $user]);
     }
 
-    public function edit(Request $rqs, $id)
+    public function update(Request $rqs, $id)
     {
 
         $book = Libro::find($id);
@@ -69,7 +69,15 @@ class BooksController
 
         return redirect()->route('Books.allbooks', ['userData' => $user])->with('success', 'bookEdited');
     }
+    public function edit($id)
+    {
 
+        $publication = Libro::find($id);
+        $user = Auth::user();
+
+        return view('Books.editBooks', ['publication' => $publication, 'userData' => $user]);
+
+    }
     public function destroy($id)
     {
 

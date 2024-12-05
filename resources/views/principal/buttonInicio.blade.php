@@ -12,19 +12,13 @@
     @vite(
         'resources/css/principal/buttoninicio.css',
     
-        'resourses/js/button/buttoninicio.js'
+        'resourses/js/button/inicio.js'
     )
 </head>
 
 <body>
     <span class="ubicacionbtn">
-        <ul class="ul">
-            <li class="li">
-                <button class="button" id="inicio">
-                    <p class="p">Inicio</p>
-                </button>
-            </li>
-        </ul>
+        <button class="shadow__btn" id="inicio">Inicio</button>
     </span>
 </body>
 
