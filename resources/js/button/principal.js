@@ -1,20 +1,20 @@
-const bookBtn = document.getElementById('books');
-const mapBtn = document.getElementById('map');
-const publicationBtn = document.getElementById('publications');
+const booksBtn = document.getElementById('books');
+const mapBtn = document.getElementById('maps');
+const publicationsBtn = document.getElementById('publications');
 
-books.addEventListener('click', () => {
+booksBtn.addEventListener('click', () => {
 
     window.location.href = booksPage;
 
 });
 
-map.addEventListener('click', () => {
+mapBtn.addEventListener('click', () => {
 
     window.location.href = mapPage;
 
 });
 
-publications.addEventListener('click', () => {
+publicationsBtn.addEventListener('click', () => {
 
     window.location.href = publicationsPage;
 

@@ -5,15 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script>
-        const booksPage = "{{ route('Books.allBooks') }}";
-        const mapPage = ""; //hola harold, esta es el boton para ir al mapa, si algo
-        const publicationsPage = "{{ route('Publications.allPublication') }}";
-    </script>
     @vite([
         //CSS
         'resources/css/principal/index.css',
-        'resources/js/button/principal.js',
     ])
 
     <title>Pagina principal</title>
@@ -26,37 +20,6 @@
     <h1 class="colorTitulo">Bienvenido</h1>
     <p class="colorNombre">{{ $userData->name }}</p>
 
-    <div class="rombo-button-container">
-        <div class="rombo-wrapper">
-            <div class="rombo-button">
-                <a id="map"></a>
-                <div class="rombo-content">
-                    <img src="https://i.imgur.com/NcDZhd5.png" alt="Mapas">
-                    <p>Mapas</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="rombo-wrapper" id="books">
-            <div class="rombo-button">
-                <a href="{{ route('Books.allBooks') }}"></a>
-                <div class="rombo-content">
-                    <img src="https://i.imgur.com/AFLjO3z.png" alt="Libros">
-                    <p>Libros</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="rombo-wrapper" id="publications">
-            <div class="rombo-button">
-                <a href=""></a>
-                <div class="rombo-content">
-                    <img src="https://i.imgur.com/KXlAdfn.png" alt="Rutas">
-                    <p>Posts</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <br>
     <h2 class="colorTitulo">¡Últimas publicaciones!</h2>

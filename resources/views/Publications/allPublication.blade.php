@@ -5,18 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    @vite(['resources/css/Publications/allPublications.css'])
+    @vite(
+        'resources/css/Publications/allPublications.css',
+    
+        'resources/js/button/createPost.js'
+    )
+
+    <script>
+        const createPostPage = "{{ route('Publications.createPost') }}";
+    </script>
+
 </head>
 
 <body>
-    <nav>
+    <header class="padding">
         @include('principal.navbar')
-    </nav>
-
-    <br>
-    @include('principal.buttonInicio')
-    <br>
-
+    </header>
+    <div class="ubication">
+        <button class="cssbuttons-io-button" id="create">
+            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z" fill="currentColor"></path>
+            </svg>
+            <span>Crear</span>
+        </button>
+    </div>
     <div class="tamañoTabla">
         <table>
             <thead>
@@ -33,7 +46,8 @@
                         <td class="actions">
                             <a href="{{ route('Publications.viewPublication', $publication->id) }}">Mira el post</a>
                             <a href="{{ route('Publications.editPublication', $publication->id) }}">Editalo</a>
-                            <form action="{{ route('Publications.deletePublication', $publication->id) }}" method="POST"
+                            <form action="{{ route('Publications.deletePublication', $publication->id) }}"
+                                method="POST"
                                 onsubmit="return confirm('¿Estás seguro de que deseas eliminar esta publicacion?');">
                                 @csrf
                                 @method('delete')
@@ -46,12 +60,12 @@
         </table>
     </div>
 </body>
-<BR></BR>
-<BR></BR>
-<BR></BR>
-<BR></BR>
-<BR></BR>
-<BR></BR>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 @include('principal.footer')
 

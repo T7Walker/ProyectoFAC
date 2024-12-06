@@ -67,15 +67,15 @@ class BooksController
 
         $user = Auth::user();
 
-        return redirect()->route('Books.allbooks', ['userData' => $user])->with('success', 'bookEdited');
+        return redirect()->route('Books.allBooks', ['userData' => $user])->with('success', 'bookEdited');
     }
     public function edit($id)
     {
 
-        $publication = Libro::find($id);
         $user = Auth::user();
+        $book = Libro::findOrFail($id);
 
-        return view('Books.editBooks', ['publication' => $publication, 'userData' => $user]);
+        return view('Books.editBooks', ['book' => $book, 'userData' => $user]);
 
     }
     public function destroy($id)

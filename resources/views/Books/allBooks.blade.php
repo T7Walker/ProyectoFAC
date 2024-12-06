@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libros</title>
+
     @vite ('resources/css/Books/allBooks.css')
 
 </head>
@@ -13,8 +14,6 @@
     <nav>
         @include ('principal.navBar')
     </nav>
-
-    @include('principal.buttonInicio')
 
     <div class="tamañoTabla">
         <table>

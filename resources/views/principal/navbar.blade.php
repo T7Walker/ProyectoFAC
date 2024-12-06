@@ -6,7 +6,14 @@
         // JS
         'resources/js/principal/navbar.js',
         'resources/js/Button/inicio.js',
+        'resources/js/Button/principal.js',
     ])
+    <script>
+        const booksPage = "{{ route('Books.allBooks') }}";
+        const mapPage = "";
+        const publicationsPage = "{{ route('Publications.allPublication') }}";
+        const indexPage = "{{ route('mainPage.index') }}"
+    </script>
 </head>
 
 <header>
@@ -16,9 +23,19 @@
             <img src="https://i.imgur.com/Kw841ke.png" alt="Logo">
         </a>
 
-        <!-- Search Bar -->
-        <div class="navbar-search">
-            <input type="text" placeholder="Buscar...">
+        <div id="maps">
+            <img src="https://i.imgur.com/I2bMcOZ.png" alt="maps" class="buttonNav">
+            <p class="buttonNav-p">Mapa</p>
+        </div>
+
+        <div id="books">
+            <img src="https://i.imgur.com/Ra0Sys9.png" alt="Libros" class="buttonNav">
+            <p class="buttonNav-p">Libros</p>
+        </div>
+
+        <div id="publications">
+            <img src="https://i.imgur.com/1OBqIVP.png" alt="Post" class="buttonNav">
+            <p class="buttonNav-p">Posts</p>
         </div>
 
         <!-- Profile Section -->
@@ -55,7 +72,7 @@
 
             <p>Nombre de Usuario
                 <br>
-                <strong>user</strong>
+            <p>{{ $userData->name }}</p>
             </p>
 
             <button class="edit-profile-btn">Editar Perfil</button>
@@ -64,16 +81,25 @@
                 <form action="{{ route('profile.updateData') }}" method="POST">
                     @csrf
                     <label for="name">Nombre:</label>
-                    <input type="text" name="name" id="name" value="{{ $userData->name }}">
+                    <div class="textInputWrapper">
+                        <input type="text" name="name" id="name" value="{{ $userData->name }}"
+                            class="textInput">
+                    </div>
 
                     <label for="email">Correo:</label>
-                    <input type="email" name="email" id="email" value="{{ $userData->email }}">
+                    <div class="textInputWrapper">
+                        <input type="email" name="email" id="email" value="{{ $userData->email }}"
+                            class="textInput">
+                    </div>
 
                     <label for="urlimg">URL de la foto de perfil:</label>
-                    <input type="text" name="urlimg" id="urlimg" value="{{ $userData->urlimg }}">
+                    <div class="textInputWrapper">
+                        <input type="text" name="urlimg" id="urlimg" value="{{ $userData->urlimg }}"
+                            class="textInput">
+                    </div>
 
                     <!-- Usa input submit en vez de botones, es buenas practicas y funciona mejor. -->
-                    <input type="submit" value="Guardar Cambios">
+                    <input type="submit" value="Guardar Cambios" class="btn">
                 </form>
 
                 <button class="close-edit-profile-form">Cancelar</button>

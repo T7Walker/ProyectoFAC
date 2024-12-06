@@ -54,7 +54,7 @@ Route::get('Books/viewBooks/{id}', [BooksController::class, 'show'])->name('Book
 Route::get('Books/pushBooks', [BooksController::class, 'push'])->name('Books.pushBook'); //pagina para subir libros
 Route::post('Books/infoBooks', [BooksController::class, 'store'])->name('Books.infoBook'); //formulario para subir libros
 Route::get('Books/editBooks/{id}', [BooksController::class, 'edit'])->name('Books.editBooks'); //editar libro
-Route::post('Books/deleteBook/{id}', [BooksController::class, 'destroy'])->name('Books.deleteBook');//borrar libro
+Route::delete('Books/deleteBook/{id}', [BooksController::class, 'destroy'])->name('Books.deleteBook');//borrar libro
 Route::post('Books/updateBook/{id}', [BooksController::class, 'update'])->name('Books.updateBook'); //actualizar libro
 
 /*

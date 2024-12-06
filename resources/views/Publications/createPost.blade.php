@@ -16,9 +16,6 @@
     <h1 class="tiltle">Crea un post</h1>
     <br>
     <br>
-    @include('principal.buttonInicio')
-    <br>
-    <br>
     <div class="contedorForm">
         <form action="{{ route('Publications.infoPublication') }}" method="POST" enctype="multipart/form-data"
             class="form">

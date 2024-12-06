@@ -12,9 +12,6 @@
 <body>
     @include('principal.navbar')
 
-    <br>
-    @include('principal.buttonInicio')
-    <br>
     <h1 class="tiltle">Edita la publicacion</h1>
     <div class="contedorForm">
         <form action="{{ route('Publications.updatePublication', $publication) }}" method="POST" class="form">
