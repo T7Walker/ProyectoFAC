@@ -26,19 +26,34 @@
     </div>
     <div class="contendor">
         <h2 class="colorTitulo">¡Últimas publicaciones!</h2>
-    </div>
-    @foreach ($publication as $post)
+
         <div class="cardPost">
-            <div class="cardPost-inner">
-                <div class="cardPost-front">
-                    <img src="{{ $post->url_file }}" alt="imagen_post" class="cardPost__image">
+            @if ($publications->isEmpty())
+                <div class="cardPost-inner">
+                    <div class="cardPost-front">
+                        <img src="https://placehold.co/600x400" alt="imagen_post" class="cardPost__image">
+                    </div>
+
+                    <div class="cardPost-back">
+                        <p>No hay publicaciones aun...</p>
+                    </div>
                 </div>
-                <div class="cardPost-back">
-                    <p>{{ $post->content }}</p>
-                </div>
-            </div>
+            @else
+                @foreach ($publications as $publication)
+                    <div class="cardPost-inner">
+                        <div class="cardPost-front">
+                            <img src="{{ $publication->url_file }}" alt="imagen_post" class="cardPost__image">
+                        </div>
+
+                        <div class="cardPost-back">
+                            <p>{{ $publication->content }}</p>
+                        </div>
+                    </div>
+                @endforeach
+            @endif
         </div>
-    @endforeach
+    </div>
+
     <br>
     <h2 class="colorTitulo">¿Quiénes somos?</h2>
     <br>
