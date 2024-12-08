@@ -1,9 +1,15 @@
-* {
+header {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
     color: #f1f1f1;
+    padding: 20px;
+}
+
+.contendor-navBar {
+
+    background-color: #3a4569;
 }
 
 /* Navbar styling */
@@ -11,7 +17,7 @@
 
     margin-left: 10%;
     margin-right: 10%;
-    height: 70px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -20,16 +26,20 @@
     position: sticky;
     top: 0;
     z-index: 100;
+    background-color: #3a4569;
+    border-radius: 26px;
 }
 
 /* Logo styling */
 .navbar-logo {
+
     display: flex;
     align-items: center;
     text-decoration: none;
 }
 
 .navbar-logo img {
+
     width: 70px;
     height: auto;
 }
@@ -328,9 +338,6 @@
     align-items: center;
 
 }
-
-
-
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

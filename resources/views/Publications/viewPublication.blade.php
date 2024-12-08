@@ -9,17 +9,22 @@
 </head>
 
 <body>
-    @include('principal.navbar')
-
-    <h1 class="tiltle">Tu publicacion</h1>
+    <nav class="padding">
+        @include('principal.navbar')
+    </nav>
+    <div class="contendor">
+        <h1 class="tiltle">Tu publicacion</h1>
+    </div>
     <br><br>
-    <span class="cardPublication">
+    <span class="centrar">
         <div class="card">
-            <img src="{{ $publication->url_file }}" alt="imagen_post" class="card__image">
-            <div class="card__content">
-                <p class="card__title">Tu publicacion
-                </p>
-                <p class="card__description">{{ $publication->content }}</p>
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="{{ $publication->url_file }}" alt="imagen_post" class="card__image">
+                </div>
+                <div class="card-back">
+                    <p>{{ $publication->content }}</p>
+                </div>
             </div>
         </div>
     </span>

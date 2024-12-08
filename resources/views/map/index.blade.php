@@ -12,7 +12,7 @@
     @vite([
         // CSS
         'resources/css/map/index.css',
-
+    
         // JS
         'resources/js/map/init.js',
     ])
@@ -21,18 +21,33 @@
 </head>
 
 <body>
+    <nav>
+        @include('principal.navbar')
+    </nav>
     <main>
-        <section class="map-container">
-            <div id="map"></div>
-        </section>
-
-        <section class="map-controls">
-            <button id="safe-routes">Rutas Transpubenza</button>
-            {{-- <button id="medium-routes">Rutas Intermedias</button>
-            <button id="dangerous-routes">Rutas Peligrosas</button> --}}
-        </section>
-
+        <div class="contendor">
+            <section class="map-container">
+                <div id="map"></div>
+            </section>
+        </div>
+        <br><br>
+        <div>
+            <nav class="contendor">
+                <section class="map-controls">
+                    <button id="safe-routes">Rutas Transpubenza</button>
+                    {{-- <button id="medium-routes">Rutas Intermedias</button>
+                    <button id="dangerous-routes">Rutas Peligrosas</button> --}}
+                </section>
+            </nav>
+        </div>
     </main>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    @include('principal.footer')
 </body>
 
 </html>

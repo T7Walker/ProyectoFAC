@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <nav>
+    <nav class="padding">
         @include('principal.navbar')
     </nav>
     <h1 class="tiltle">Crea un post</h1>

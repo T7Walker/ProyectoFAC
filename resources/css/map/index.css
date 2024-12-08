@@ -1,13 +1,73 @@
+/* Reset y configuraciones base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Fondo del cuerpo */
+body,
+html {
+    background-color: #1c2544;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    padding: 20px;
+    position: sticky;
+    bottom: 0;
+}
+
+body {
+
+    flex: 1;
+}
+
+/* Estilo de los títulos */
+.colorTitulo {
+    color: #32cd32;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 70px;
+}
+
+.colorNombre {
+
+    color: #32cd32;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 70px;
+
+}
+
+.contendor {
+
+    background-color: #3a4569;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 36px;
+    max-width: 1200px;
+    /* Limita el ancho máximo del contenedor */
+    width: 100%;
+    height: auto;
+
+}
+
 #map {
     width: 100%;
-    height: 100vh;
+    height: 50vh;
+    /* 50% de la altura de la ventana */
+    min-height: 400px;
+    /* Altura mínima para no hacerse demasiado pequeño */
 }
 
 .map-controls {
-    position: absolute;
+
     top: 10px;
     left: 10px;
-    z-index: 1;
+
     display: flex;
     gap: 10px;
 }
@@ -32,4 +92,33 @@
 #dangerous-routes {
     background-color: red;
     color: white;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 767px) {
+    .contendor {
+        margin: 20px;
+        padding: 10px;
+    }
+
+    #map {
+        height: 40vh;
+        /* Ajusta el mapa a un tamaño más pequeño en pantallas pequeñas */
+    }
+}
+
+/* Media Query para pantallas medianas */
+@media (min-width: 768px) and (max-width: 1199px) {
+    #map {
+        height: 60vh;
+        /* Ajusta el mapa a un tamaño intermedio */
+    }
+}
+
+/* Media Query para pantallas grandes */
+@media (min-width: 1200px) {
+    #map {
+        height: 70vh;
+        /* Ajusta el mapa a un tamaño grande para pantallas grandes */
+    }
 }

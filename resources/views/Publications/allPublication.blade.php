@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Publicaciones</title>
     @vite(
         'resources/css/Publications/allPublications.css',
     
@@ -34,7 +34,7 @@
         <table>
             <thead>
                 <tr>
-                    <th>descripcion</th>
+                    <th>Descripcion</th>
                     <th>URL de la imagen</th>
                 </tr>
             </thead>

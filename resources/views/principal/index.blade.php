@@ -17,15 +17,28 @@
 
     @include('principal.navbar')
 
-    <h1 class="colorTitulo">Bienvenido</h1>
-    <p class="colorNombre">{{ $userData->name }}</p>
-
-
-    <br>
-    <h2 class="colorTitulo">¡Últimas publicaciones!</h2>
-    <div>
-        <p>Aquí va todo lo de publicaciones</p>
+    <div class="contendor">
+        <h1 class="colorTitulo">Bienvenido</h1>
+        <p class="colorNombre">{{ $userData->name }}</p>
     </div>
+    <div class="profile-container">
+        <img src="{{ $userData->urlimg }}" alt="fotoDePerfil" class="profile-picture">
+    </div>
+    <div class="contendor">
+        <h2 class="colorTitulo">¡Últimas publicaciones!</h2>
+    </div>
+    @foreach ($publication as $post)
+        <div class="cardPost">
+            <div class="cardPost-inner">
+                <div class="cardPost-front">
+                    <img src="{{ $post->url_file }}" alt="imagen_post" class="cardPost__image">
+                </div>
+                <div class="cardPost-back">
+                    <p>{{ $post->content }}</p>
+                </div>
+            </div>
+        </div>
+    @endforeach
     <br>
     <h2 class="colorTitulo">¿Quiénes somos?</h2>
     <br>
@@ -48,7 +61,8 @@
     <div class="cards-container">
         <div class="card">
             <p class="card-p2">
-                En nuestra página tenemos servicios que traen comodidad al integrarte a Popayán, como herramientas de
+                En nuestra página tenemos servicios que traen comodidad al integrarte a Popayán, como herramientas
+                de
                 libros, publicaciones y mapas con rutas y zonas críticas.
             </p>
         </div>
