@@ -64,35 +64,53 @@ body {
 }
 
 .map-controls {
-
-    top: 10px;
-    left: 10px;
-
     display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 10px;
     gap: 10px;
-}
-
-.map-controls button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#safe-routes {
-    background-color: green;
+    width: 30%;
     color: white;
 }
 
-#medium-routes {
-    background-color: yellow;
+.blue-column {
+    background-color: #004894;
+    /* Azul */
+}
+
+.yellow-column {
+    background-color: #ccb808;
+    /* Amarillo pollito */
     color: black;
 }
 
-#dangerous-routes {
-    background-color: red;
-    color: white;
+.red-column {
+    background-color: #cb1e12;
+    /* Rojo no tan chillón */
 }
+
+nav.contendor {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.map-controls button {
+    background-color: #3a4569;
+    padding: 10px 15px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.map-controls button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
 
 /* Media Query para pantallas pequeñas */
 @media (max-width: 767px) {
