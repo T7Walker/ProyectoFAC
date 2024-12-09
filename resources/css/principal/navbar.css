@@ -58,14 +58,14 @@ header {
     height: 45px;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid #2ecc71;
+    border: 3px solid #32cd32;
     cursor: pointer;
     transition: transform 0.3s;
 }
 
 .navbar-profile:hover {
     transform: scale(1.1);
-    border-color: #27ae60;
+    border-color: #32cd32;
 }
 
 .navbar-profile img {
@@ -133,8 +133,8 @@ header {
 }
 
 .modal-content {
-    background-color: #2c3e50;
-    margin: 15% auto;
+    background-color: #3a4569;
+    margin: 4% auto;
     padding: 20px;
     border-radius: 8px;
     width: 300px;
@@ -144,7 +144,7 @@ header {
 .modal-content input[type='submit'],
 .modal-content button {
     background-color: #1c2544;
-    border: 3px solid #2ecc71;
+    border: 3px solid #32cd32;
     padding: 10px 20px;
     color: #ffffff;
     font-size: 16px;
@@ -156,11 +156,11 @@ header {
 
 .modal-content input[type='submit']:hover,
 .modal-content button:hover {
-    background-color: #2ecc71;
+    background-color: #32cd32;
 }
 
 .modal-content h2 {
-    color: #2ecc71;
+    color: #32cd32;
 }
 
 /* Ajuste para la imagen dentro del modal */
@@ -175,7 +175,7 @@ header {
     /* Mantiene la imagen circular */
     margin-bottom: 20px;
     /* Espaciado debajo de la imagen */
-    border: 3px solid #2ecc71;
+    border: 3px solid #32cd32;
     /* Borde verde alrededor de la imagen */
 }
 
@@ -200,7 +200,7 @@ header {
 
 .buttonNav-p {
 
-    color: #2ecc71;
+    color: #32cd32;
 
 }
 
@@ -208,9 +208,11 @@ header {
 .textInputWrapper {
     position: relative;
     width: 180px;
-    margin: 12px 5px;
-    --accent-color: #a3e583;
+    margin: 10px 10px 15px 40px;
+    --accent-color: #32cd32;
+
 }
+
 
 .textInputWrapper:before {
     transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
@@ -268,7 +270,7 @@ header {
     border-radius: 5px 5px 0px 0px;
     box-shadow: 0px 2px 5px rgb(35 35 35 / 30%);
     max-height: 36px;
-    background-color: #252525;
+    background-color: #1c2544;
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-duration: 200ms;
     transition-property: background-color;
@@ -280,6 +282,7 @@ header {
     border-left: none;
     border-bottom: none;
     border-right: none;
+
 }
 
 .textInputWrapper .textInput:focus,
@@ -290,7 +293,7 @@ header {
 .textInputWrapper:focus-within .textInput,
 .textInputWrapper .textInput:focus,
 .textInputWrapper .textInput:active {
-    background-color: #353535;
+    background-color: #0e142c;
 }
 
 .textInputWrapper:focus-within .textInput::placeholder {

@@ -34,9 +34,8 @@
         <div>
             <nav class="contendor">
                 <section class="map-controls">
-                    <button id="safe-routes">Rutas Transpubenza</button>
-                    {{-- <button id="medium-routes">Rutas Intermedias</button>
-                    <button id="dangerous-routes">Rutas Peligrosas</button> --}}
+                    <button id="TP1BTroute">RutaTP1BT Transpubenza</button>
+                    <button id=""></button>
                 </section>
             </nav>
         </div>

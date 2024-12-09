@@ -143,8 +143,30 @@ body {
 /* From Uiverse.io by vamsidevendrakumar */
 .cardPost {
     width: 600px;
+    /* Ancho de la tarjeta */
     height: 400px;
+    /* Mantén la altura existente */
     perspective: 1000px;
+    /* Mantén el efecto 3D */
+}
+
+.cardPost-container {
+
+    display: flex;
+    flex-direction: row;
+    /* Organiza las tarjetas de post en fila */
+    justify-content: space-between;
+    /* Espacio uniforme entre tarjetas */
+    align-items: center;
+    /* Alinea verticalmente las tarjetas */
+    gap: 20px;
+    /* Espacio entre tarjetas */
+    flex-wrap: nowrap;
+    /* Evita que las tarjetas bajen a otra fila */
+    overflow-x: auto;
+    /* Activa el scroll horizontal si hay demasiadas tarjetas */
+    padding: 10px;
+
 }
 
 .cardPost-inner {

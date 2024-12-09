@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Log;
 
-class Profile
+
+class Profile extends Controller
 {
     // Esta funcion actualiza valores de la base de datos del usuario.
     public function update(Request $rqs)

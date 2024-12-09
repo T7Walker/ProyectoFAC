@@ -68,13 +68,14 @@
                 <h2>Perfil de Usuario</h2>
                 <br>
 
-                <img src="https://pbs.twimg.com/media/FZraIZmWIAEX8hd.jpg" alt="Foto de perfil"
+                <img src="{{ $userData->urlimg }}" alt="Foto de perfil"
                     style="border-radius: 50%; margin-bottom: 20px;">
 
                 <p>Nombre de Usuario
                     <br>
                 <p>{{ $userData->name }}</p>
                 </p>
+                <br>
 
                 <button class="edit-profile-btn">Editar Perfil</button>
 
@@ -84,23 +85,23 @@
                         <label for="name">Nombre:</label>
                         <div class="textInputWrapper">
                             <input type="text" name="name" id="name" value="{{ $userData->name }}"
-                                class="textInput">
+                                class="textInput" class="formEditProfileUbication">
                         </div>
-
                         <label for="email">Correo:</label>
                         <div class="textInputWrapper">
                             <input type="email" name="email" id="email" value="{{ $userData->email }}"
-                                class="textInput">
+                                class="textInput" class="formEditProfileUbication">
                         </div>
-
                         <label for="urlimg">URL de la foto de perfil:</label>
+                        <br>
                         <div class="textInputWrapper">
                             <input type="text" name="urlimg" id="urlimg" value="{{ $userData->urlimg }}"
-                                class="textInput">
+                                class="textInput" class="formEditProfileUbication">
                         </div>
 
                         <!-- Usa input submit en vez de botones, es buenas practicas y funciona mejor. -->
-                        <input type="submit" value="Guardar Cambios" class="btn">
+
+                        <input type="submit" value="Guardar Cambios" class="btn" class="formEditProfileUbication">
                     </form>
 
                     <button class="close-edit-profile-form">Cancelar</button>

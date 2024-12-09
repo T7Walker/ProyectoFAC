@@ -21,29 +21,38 @@ new mapboxgl.Marker().setLngLat([-76.6092, 2.4448]).setPopup(new mapboxgl.Popup(
 
 
 // Aqui estan los botones
-const safeBtn = document.getElementById('safe-routes');
-// const mediumBtn = document.getElementById('medium-routes');
-// const dangerBtn = document.getElementById('dangerous-routes');
+const TP1BTBtn = document.getElementById('TP1BTroute')
+const TP2BTBtn = document.getElementById('TP2BTroute')
+const TP2MBtn = document.getElementById('TP2Mroute')
+const TP4BTBtn = document.getElementById('TP4BTroute')
+
 
 // Eventos 'click' de los botones
 // En caso de añadirse mas botones o mas datos, edita routes.dataTranspubenza por el nombre que le pusiste a la variable, por ejemplo, aqui es dataTranspubenza, entonces si el tuyo es dataTranspubenza2, seria routes.dataTranspubenza2.
-safeBtn.addEventListener('click', () => {
-    const { id, coordinates, waypoints = [], color } = routes.dataTranspubenza;
+TP1BTBtn.addEventListener('click', () => {
+    const { id, coordinates, waypoints = [], color } = routes.dataTranspubenzaTP1BT;
 
     addAdjustedRoute(id, color, coordinates[0], waypoints, coordinates[1]);
 });
 
-// mediumBtn.addEventListener('click', () => {
-//     const { id, coordinates, waypoints = [], color } = routes.intermediate;
+TP2BTBtn.addEventListener('click', () => {
+    const { id, coordinates, waypoints = [], color } = routes.dataTranspubenzaTP2BT;
 
-//     addAdjustedRoute('intermediate', color, coordinates[0], waypoints, coordinates[1]);
-// });
+    addAdjustedRoute(id, color, coordinates[0], waypoints, coordinates[1]);
+});
 
-// dangerBtn.addEventListener('click', () => {
-//     const { id, coordinates, waypoints = [], color } = routes.dangerous;
+TP2MBtn.addEventListener('click', () => {
+    const { id, coordinates, waypoints = [], color } = routes.dataTranspubenzaTP2M;
 
-//     addAdjustedRoute('dangerous', color, coordinates[0], waypoints, coordinates[1]);
-// });
+    addAdjustedRoute(id, color, coordinates[0], waypoints, coordinates[1]);
+});
+
+TP4BTBtn.addEventListener('click', () => {
+
+    const { id, coordinates, waypoints = [], color } = routes.dataTranspubenzaTP4BT;
+
+    addAdjustedRoute(id, color, coordinates[0], waypoints, coordinates[1]);
+});
 
 
 
