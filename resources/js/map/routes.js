@@ -18,7 +18,7 @@ export const routes = {
     dataTranspubenzaTP2BT: {
 
         id: "transpubenzaTP2BT",
-        color: "00ff66",
+        color: '00ff66',
 
         coordinates: [[-76.57789797663554, 2.4830033725588168], [-76.59976627257036, 2.4563116512112106]],
         waypoints: [[-76.6161530054716, 2.4372029462617397], [-76.598330, 2.451995], [-76.59377724106312, 2.4594503112741317]]
@@ -27,7 +27,7 @@ export const routes = {
     dataTranspubenzaTP2M: {
 
         id: "transpubenzaTP2M",
-        color: "00ffd2",
+        color: '00ffd2',
 
         coordinates: [[-76.63577549832756, 76.63577549832756], [-76.56348768622935, 2.490428365801495]],
 
@@ -38,7 +38,7 @@ export const routes = {
     dataTranspubenzaTP4BT: {
 
         id: "trasnpubenzaTP4BT",
-        color: "009aff",
+        color: '009aff',
 
         coordinates: [[-76.57172299402527, 2.4756525421968987], [-76.64361849764964, 2.4589913584006817]],
 
@@ -49,7 +49,7 @@ export const routes = {
     dataTranspubenzaTP5BT: {
 
         id: "transpubenzaTP5BT",
-        color: "0032ff",
+        color: '0032ff',
 
         coordinates: [[-76.58705588829557, 2.459075310549009], [-76.57789797663554, 2.4830033725588168]],
 
@@ -60,7 +60,7 @@ export const routes = {
     dataTranspubenzaTP5M: {
 
         id: "transpubenzaTP5M",
-        color: "7100ff",
+        color: '7100ff',
 
         coordinates: [[-76.60002708444877, -76.60002708444877], [-76.60812314410266, 2.4514055711682294]],
 
@@ -71,7 +71,7 @@ export const routes = {
     dataTranspubenzaTP6BT: {
 
         id: "transpubenzaTP6BT",
-        color: "9f00ff",
+        color: '9f00ff',
 
         coordinates: [[-76.560550, 2.478068], [-76.63577549832756, 2.4592459591277938]],
 
@@ -82,7 +82,7 @@ export const routes = {
     dataTranspubenzaTP7BT: {
 
         id: "transpubenzaTP7BT",
-        color: "d100ff",
+        color: 'd100ff',
 
         coordinates: [[-76.57172299402527, 2.4756525421968987], [-76.61638532324054, 2.437322952846013]],
 
@@ -93,7 +93,7 @@ export const routes = {
     dataTranspubenzaTP7M: {
 
         id: "transpubenza",
-        color: "ff00e4",
+        color: 'ff00e4',
 
         coordinates: [[-76.64361849764964, 2.4589913584006817], [-76.63763339918368, 2.460421423158193]],
 
@@ -104,7 +104,7 @@ export const routes = {
     dataTranspubenzaTP8BT: {
 
         id: "transpubenzaTP8BT",
-        color: "ff0056",
+        color: 'ff0056',
 
         coordinates: [[-76.63577549832756, 2.4592459591277938], [-76.58228554225903, 2.4931367111446803]],
 
@@ -115,7 +115,7 @@ export const routes = {
     dataTranspubenzaTP8M: {
 
         id: "transpubenzaTP8M",
-        color: "ff0000",
+        color: 'ff0000',
 
         coordinates: [[-76.60956942737855, 2.4428450855422685], [-76.58228554225903, 2.4931367111446803]],
 
@@ -126,7 +126,7 @@ export const routes = {
     dataTranspubenzaTP9M: {
 
         id: "transpubenzaTP9M",
-        color: "ff7000",
+        color: 'ff7000',
 
         coordinates: [[-76.63577549832756, 2.4592459591277938], [-76.54984061443642, 2.5886072044392026]],
 
@@ -137,7 +137,7 @@ export const routes = {
     dataTranspubenzaTP10M: {
 
         id: "transpubenzaTP10M",
-        color: "ffb000",
+        color: 'ffb000',
 
         coordinates: [[-76.64361849764964, 2.4589913584006817], [-76.56219983060814, 2.4833509558581675]],
 
@@ -148,7 +148,7 @@ export const routes = {
     dataTranspubenzaTP11M: {
 
         id: "transpubenzaTP11M",
-        color: "ffe800",
+        color: 'ffe800',
 
         coordinates: [[-76.62526577998091, 2.437461697949201], [-76.54964858595915, 2.5023046551103594]],
 
@@ -159,7 +159,7 @@ export const routes = {
     dataTrastamboTT1M: {
 
         id: "transtamboTT1M",
-        color: "00ff00",
+        color: '00ff00',
 
         coordinates: [[-76.57741069196808, 2.480086474139963], [-76.64361849764964, 2.4589913584006817]],
 
@@ -170,18 +170,18 @@ export const routes = {
     dataTrastamboTT2M: {
 
         id: "transtamboTT2M",
-        color: "00ff69",
+        color: '00ff69',
 
         coordinates: [[-76.54616854674597, 2.4690341235207685], [-76.64361849764964, 2.4589913584006817]],
 
-        waypoints: [[-76.58000914965152, 2.475514736349955], [--76.56219983060814, 2.4833509558581675], [-76.60785887938471, 2.440510994315813]]
+        waypoints: [[-76.58000914965152, 2.475514736349955], [-76.56219983060814, 2.4833509558581675], [-76.60785887938471, 2.440510994315813]]
 
     },
 
     dataTrastamboTT3M: {
 
         id: "transtamboTT3M",
-        color: "00ffa5",
+        color: '00ffa5',
 
         coordinates: [[-76.64361849764964, 2.4589913584006817], [-76.60261247292266, 2.443829479332352]],
 
@@ -192,7 +192,7 @@ export const routes = {
     dataTrastamboTT4M: {
 
         id: "transtamboTT4M",
-        color: "00ffd8",
+        color: '00ffd8',
 
         coordinates: [[-76.54143381949821, 2.4665153516266276], [-76.63277152872489, 2.4515738245266]],
 
@@ -203,7 +203,7 @@ export const routes = {
     dataTrastamboTT5M: {
 
         id: "transtamboTT5M",
-        color: "00c7ff",
+        color: '00c7ff',
 
         coordinates: [[-76.64101610260742, 2.465905760680773], [-76.584914, 2.486593]],
 
@@ -214,7 +214,7 @@ export const routes = {
     dataTrastamboTT6M: {
 
         id: "transtamboTT6M",
-        color: "006dff",
+        color: '006dff',
 
         coordinates: [[-76.54143381949821, 2.4665153516266276], [-76.66608218778305, 2.471234713800341]],
 
@@ -225,7 +225,7 @@ export const routes = {
     dataSotracaucaSC1M: {
 
         id: "sotracaucaSC1M",
-        color: "00ff00",
+        color: '00ff00',
 
         coordinates: [[-76.560550, 2.478068], [-76.6161530054716, 2.4372029462617397]],
 
@@ -236,7 +236,7 @@ export const routes = {
     dataSotracaucaSC2M: {
 
         id: "sotracaucaSC2M",
-        color: "00ff69",
+        color: '00ff69',
 
         coordinates: [[-76.560550, 2.478068], [-76.64361849764964, 2.4589913584006817]],
 
@@ -247,7 +247,7 @@ export const routes = {
     dataSotracaucaSC3M: {
 
         id: "sotracaucaSC3M",
-        color: "00ffba",
+        color: '00ffba',
 
         coordinates: [[-76.63296714741794, 2.45124191305721], [-76.60627916928512, 2.449293210761546]],
 
@@ -258,7 +258,7 @@ export const routes = {
     dataSotracaucaSC4M: {
 
         id: "sotracaucaSC4M",
-        color: "00f6ff",
+        color: '00f6ff',
 
         coordinates: [[-76.614892, 2.445504], [-76.58076884417345, 2.4608779626786443]],
 
@@ -269,7 +269,7 @@ export const routes = {
     dataSotracaucaSC5M: {
 
         id: "sotracaucaSC5M",
-        color: "00baff",
+        color: '00baff',
 
         coordinates: [[-76.560550, 2.478068], [-76.57789797663554, 2.4830033725588168]],
 
@@ -280,7 +280,7 @@ export const routes = {
     dataSotracaucaSC6M: {
 
         id: "sotracaucaSC6M",
-        color: "fff100",
+        color: 'fff100',
 
         coordinates: [[-76.560550, 2.478068], [-76.63296714741794, 2.45124191305721]],
 
@@ -291,7 +291,7 @@ export const routes = {
     dataSotracaucaSC7M: {
 
         id: "sotracaucaSC7M",
-        color: "006dff",
+        color: '006dff',
 
         coordinates: [[-76.64411717195075, 2.477588568098543], [-76.55844376747618, 2.5031104895069367]],
 
@@ -302,7 +302,7 @@ export const routes = {
     dataSotracaucaSC8M: {
 
         id: "sotracaucaSC8M",
-        color: "006dff",
+        color: '006dff',
 
         coordinates: [[-76.63296714741794, 2.45124191305721], [-76.57669186001755, 2.4809439768806785]],
 
@@ -313,7 +313,7 @@ export const routes = {
     dataSotracaucaSC9M: {
 
         id: "sotracaucaSC9M",
-        color: "006dff",
+        color: '006dff',
 
         coordinates: [[-76.64411717195075, 2.477588568098543], [-76.560550, 2.478068]],
 

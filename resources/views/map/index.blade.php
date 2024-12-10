@@ -47,18 +47,31 @@
                 <section class="map-controls blue-column" name="transpubenza-Routes">
                     <h3>Transpubenza</h3>
                     <button id="TP1BTroute">Ruta TP1BT</button>
+
                     <button id="TP2BTroute">Ruta TP2BT</button>
+
                     <button id="TP2Mroute">Ruta TP2M</button>
+
                     <button id="TP4BTroute">Ruta TP4BT</button>
+
                     <button id="TP5BTroute">Ruta TP5BT</button>
+
                     <button id="TP5Mroute">Ruta TP5M</button>
+
                     <button id="TP6BTroute">Ruta TP6BT</button>
+
                     <button id="TP7BTroute">Ruta TP7BT</button>
+
                     <button id="TP7Mroute">Ruta TP7M</button>
+
                     <button id="TP9BTroute">Ruta TP9BT</button>
+
                     <button id="TP8Mroute">Ruta TP8M</button>
+
                     <button id="TP9Mroute">Ruta TP9M</button>
+
                     <button id="TP10Mroute">Ruta TP10M</button>
+
                     <button id="TP11Mroute">Ruta TP11M</button>
                 </section>
 
