@@ -12,6 +12,8 @@
     @include('principal.navbar')
 
     <h1 class="colorTitulo">Este es libro que publicaste</h1>
+    <br>
+    <br>
 
     <div class="button" data-text="Awesome">
         <span class="actual-text">&nbsp;{{ $book->title }}&nbsp;</span>
@@ -20,7 +22,7 @@
     <br>
     <br>
     <br>
-    <button class="shadow__btn">Link del libro</button>
+    <button class="shadow__btn"></button>
     <br>
     <br>
     <br>

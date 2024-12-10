@@ -21,7 +21,7 @@
         <nav class="navbar">
             <!-- Logo -->
             <a class="navbar-logo" id="logo">
-                <img src="https://i.imgur.com/Kw841ke.png" alt="Logo">
+                <img src="https://i.imgur.com/XkITRUw.png" alt="Logo">
             </a>
 
             <div id="maps">

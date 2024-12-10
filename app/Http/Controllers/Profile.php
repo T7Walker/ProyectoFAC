@@ -20,10 +20,12 @@ class Profile extends Controller
         // Aqui se esta tomando los valores del usuario, si revisas el HTML de la pagina principal, los inputs de name y email, tienen un valor llamado name="", ese es el input que recibe Request. En estas variables esta pues obviamente lo que se puso en el input.
         $name = $rqs->input('name');
         $email = $rqs->input('email');
+        $urlimg = $rqs->input('urlimg');
 
         // Aqui se le indica a la base de datos que actualice los valores ya existentes del usuario PERO, solo valores independientes, no todos los valotes. Como el nombre y email.
         $user->name = $name;
         $user->email = $email;
+        $user->urlimg = $urlimg;
 
         // Se guardan los cambios
         $user->save();
