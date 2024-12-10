@@ -312,10 +312,27 @@ SC9MBtn.addEventListener('click', () => {
  * @returns {Void}
  */
 async function addAdjustedRoute(id, color, start, waypoints, end) {
-    const coordinates = await getRoute(start, waypoints, end);
+    const layers = map.getStyle().layers;
 
-    if (map.getLayer(id)) map.removeLayer(id);
-    if (map.getSource(id)) map.removeSource(id);
+    if (layers) {
+        layers.forEach(layer => {
+            if (layer.id.startsWith('route-')) {
+                if (map.getLayer(layer.id)) {
+                    map.removeLayer(layer.id);
+                };
+
+                if (map.getSource(layer.id)) {
+                    map.removeSource(layer.id);
+                };
+            };
+        });
+    };
+
+    if (map.getSource(id)) {
+        map.removeSource(id);
+    };
+
+    const coordinates = await getRoute(start, waypoints, end);
 
     map.addSource(id, {
         type: 'geojson',
@@ -330,7 +347,7 @@ async function addAdjustedRoute(id, color, start, waypoints, end) {
     });
 
     map.addLayer({
-        id: id,
+        id: `route-${id}`,
         type: 'line',
         source: id,
         layout: { 'line-join': 'round', 'line-cap': 'round' },
