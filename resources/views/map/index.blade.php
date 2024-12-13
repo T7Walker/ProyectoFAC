@@ -25,7 +25,7 @@
         @include('principal.navbar')
     </nav>
 
-    <h1 class="colorTitulo">Mapas</h1>
+    <h1 class="colorTitulo">Mapa</h1>
 
     <br>
     <br>
