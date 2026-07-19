@@ -1,0 +1,72 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: proyectofac-app
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - APP_URL=http://localhost:8080
+      - APP_TIMEZONE=America/Bogota
+      - DB_CONNECTION=mysql
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_DATABASE=proyectofac
+      - DB_USERNAME=proyectofac_user
+      - DB_PASSWORD=proyectofac_pass
+    volumes:
+      - ./storage:/var/www/html/storage
+      - ./public/uploads:/var/www/html/public/uploads
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - proyectofac-network
+
+  db:
+    image: mariadb:10.11
+    container_name: proyectofac-db
+    restart: unless-stopped
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root_password
+      - MYSQL_DATABASE=proyectofac
+      - MYSQL_USER=proyectofac_user
+      - MYSQL_PASSWORD=proyectofac_pass
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+    networks:
+      - proyectofac-network
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: proyectofac-phpmyadmin
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    environment:
+      - PMA_HOST=db
+      - PMA_PORT=3306
+      - UPLOAD_LIMIT=100M
+    depends_on:
+      - db
+    networks:
+      - proyectofac-network
+
+volumes:
+  db_data:
+
+networks:
+  proyectofac-network:
+    driver: bridge
