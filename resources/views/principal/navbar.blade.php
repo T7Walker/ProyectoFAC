@@ -21,21 +21,21 @@
         <nav class="navbar">
             <!-- Logo -->
             <a class="navbar-logo" id="logo">
-                <img src="https://i.imgur.com/XkITRUw.png" alt="Logo">
+                <img src="{{ asset('storage/XkITRUw.png') }}" alt="Logo">
             </a>
 
             <div id="maps">
-                <img src="https://i.imgur.com/I2bMcOZ.png" alt="maps" class="buttonNav">
+                <img src="{{ asset('storage/I2bMcOZ.png') }}" alt="maps" class="buttonNav">
                 <p class="buttonNav-p">Mapa</p>
             </div>
 
             <div id="books">
-                <img src="https://i.imgur.com/Ra0Sys9.png" alt="Libros" class="buttonNav">
+                <img src="{{ asset('storage/Ra0Sys9.png') }}" alt="Libros" class="buttonNav">
                 <p class="buttonNav-p">Libros</p>
             </div>
 
             <div id="publications">
-                <img src="https://i.imgur.com/1OBqIVP.png" alt="Post" class="buttonNav">
+                <img src="{{ asset('storage/1OBqIVP.png') }}" alt="Post" class="buttonNav">
                 <p class="buttonNav-p">Posts</p>
             </div>
 

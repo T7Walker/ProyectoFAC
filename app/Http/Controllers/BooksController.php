@@ -2,90 +2,79 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Libro;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreBookRequest;
+use App\Services\BookService;
 use Illuminate\Support\Facades\Auth;
-use Carbon\Carbon;
 
 class BooksController
 {
-    public function push()
+    protected BookService $bookService;
+
+    public function __construct(BookService $bookService)
     {
-        $user = Auth::user();
-
-        return view("Books.pushBooks", ['userData' => $user]);
-    }
-
-    public function store(Request $rqs)
-    {
-
-        $tiltle = $rqs->input("title");
-        $url = $rqs->input("url");
-
-        Libro::create([
-
-
-            "title" => $tiltle,
-            "url" => $url,
-            'date_creation' => Carbon::now()
-
-
-        ]);
-
-        $user = Auth::user();
-
-        return redirect()->route('Books.allBooks', ['userData' => $user])->with('success', 'pushBookSucess');
+        $this->bookService = $bookService;
     }
 
     public function all()
     {
-
-        $books = Libro::all();
+        $books = $this->bookService->getAll();
         $user = Auth::user();
 
-        return view('Books.allBooks', ['books' => $books, 'userData' => $user]);
+        return view('Books.allBooks', [
+            'libro' => $books,
+            'userData' => $user,
+        ]);
     }
 
     public function show($id)
     {
-
-        $book = Libro::findOrFail($id);
+        $book = $this->bookService->getById($id);
         $user = Auth::user();
 
-        return view('Books.viewBooks', ['book' => $book, 'userData' => $user]);
+        return view('Books.viewBooks', [
+            'libro' => $book,
+            'userData' => $user,
+        ]);
     }
 
-    public function update(Request $rqs, $id)
+    public function push()
     {
-
-        $book = Libro::find($id);
-
-        $book->title = $rqs->input('title');
-        $book->url = $rqs->input('url');
-
-        $book->save();
-
         $user = Auth::user();
-
-        return redirect()->route('Books.allBooks', ['userData' => $user])->with('success', 'bookEdited');
+        return view('Books.pushBooks', ['userData' => $user]);
     }
+
+    public function store(StoreBookRequest $request)
+    {
+        $this->bookService->create($request->validated());
+
+        return redirect()->route('Books.allBooks')
+            ->with('success', 'Libro creado exitosamente.');
+    }
+
     public function edit($id)
     {
-
         $user = Auth::user();
-        $book = Libro::findOrFail($id);
+        $book = $this->bookService->getById($id);
 
-        return view('Books.editBooks', ['book' => $book, 'userData' => $user]);
-
+        return view('Books.editBooks', [
+            'libro' => $book,
+            'userData' => $user,
+        ]);
     }
+
+    public function update(StoreBookRequest $request, $id)
+    {
+        $this->bookService->update($id, $request->validated());
+
+        return redirect()->route('Books.allBooks')
+            ->with('success', 'Libro actualizado exitosamente.');
+    }
+
     public function destroy($id)
     {
+        $this->bookService->delete($id);
 
-        $book = Libro::findOrFail($id);
-        $book->delete();
-
-        $user = Auth::user();
-
-        return redirect()->route('Books.allBooks', ['userData' => $user])->with('success', 'bookEliminated');
+        return redirect()->route('Books.allBooks')
+            ->with('success', 'Libro eliminado exitosamente.');
     }
 }

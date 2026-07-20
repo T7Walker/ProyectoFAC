@@ -2,92 +2,79 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Carbon\Carbon;
-use App\Models\Publicacion;
+use App\Http\Requests\StorePublicationRequest;
+use App\Services\PublicationService;
 use Illuminate\Support\Facades\Auth;
 
 class PublicationController
 {
+    protected PublicationService $publicationService;
+
+    public function __construct(PublicationService $publicationService)
+    {
+        $this->publicationService = $publicationService;
+    }
+
     public function create()
     {
         $user = Auth::user();
-
         return view("Publications.createPost", ['userData' => $user]);
     }
 
-    public function store(Request $rqs)
+    public function store(StorePublicationRequest $request)
     {
+        $this->publicationService->create($request->validated());
 
-        $content = $rqs->input('content');
-        $url_file = $rqs->input('url_file');
-        $date = now();
-
-        Publicacion::create([
-
-            'content' => $content,
-            'url_file' => $url_file,
-            'date' => $date,
-
-        ]);
-
-        return redirect()->route('Publications.allPublication')->with('success', 'pushBookSucess');
+        return redirect()->route('Publications.allPublication')
+            ->with('success', 'Publicación creada exitosamente.');
     }
+
     public function all()
     {
-
-        $publication = Publicacion::all();
+        $publications = $this->publicationService->getAll();
         $user = Auth::user();
 
-        return view('Publications.allPublication', ['publication' => $publication, 'userData' => $user]);
+        return view('Publications.allPublication', [
+            'publication' => $publications,
+            'userData' => $user,
+        ]);
     }
 
     public function show($id)
     {
-
-        $publication = Publicacion::findOrFail($id);
+        $publication = $this->publicationService->getById($id);
         $user = Auth::user();
-        return view('Publications.viewPublication', ['publication' => $publication, 'userData' => $user]);
 
+        return view('Publications.viewPublication', [
+            'publication' => $publication,
+            'userData' => $user,
+        ]);
     }
-    public function update(Request $rqs, $id)
-    {
 
-        $user = Auth::user();
-        $publication = Publicacion::find($id);
-
-        $publication->content = $rqs->input('content');
-        $publication->url_file = $rqs->input('url_file');
-        $publication->date = $rqs->input('date');
-
-        $publication->save();
-
-        return redirect()->route('Publications.allPublication', ['userData' => $user])->with('success', 'publicationEdited');
-    }
     public function edit($id)
     {
         $user = Auth::user();
-        $publication = Publicacion::find($id);
+        $publication = $this->publicationService->getById($id);
 
-        return view('Publications.editPublication', ['publication' => $publication, 'userData' => $user]);
-
+        return view('Publications.editPublication', [
+            'publication' => $publication,
+            'userData' => $user,
+        ]);
     }
 
+    public function update(StorePublicationRequest $request, $id)
+    {
+        $this->publicationService->update($id, $request->validated());
 
+        return redirect()->route('Publications.allPublication')
+            ->with('success', 'Publicación actualizada exitosamente.');
+    }
 
     public function destroy($id)
     {
+        $this->publicationService->delete($id);
 
-        $publication = Publicacion::findOrFail($id);
-        $publication->delete();
-
-        return redirect()->route('Publications.allPublication')->with('success', 'publicationEliminated');
+        return redirect()->route('Publications.allPublication')
+            ->with('success', 'Publicación eliminada exitosamente.');
     }
-    public function indexNavBar()
-    {
-
-        $user = Auth::user();
-        return view('Publications.allPublication', ['userData' => $user]);
-    }
-
 }

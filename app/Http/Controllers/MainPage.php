@@ -3,26 +3,36 @@
 namespace App\Http\Controllers;
 
 use App\Models\Publicacion;
+use App\Services\PublicationService;
 use Illuminate\Support\Facades\Auth;
 
 class MainPage
 {
-    // Funcion que muestra la pagina principal y obtiene los datos del usuario registrado.
+    protected PublicationService $publicationService;
+
+    public function __construct(PublicationService $publicationService)
+    {
+        $this->publicationService = $publicationService;
+    }
+
+    /**
+     * Muestra la página principal.
+     * Funciona tanto para usuarios autenticados como para invitados.
+     */
     public function index()
     {
-        // Aqui se obtiene y manda los datos del usuario registrado que inicio sesion a la pagina principal.
-        // La desventaja aqui es que, como se esta mandando valores de UN USUARIO REGISTRADO, en caso que no lo sea, seria nulo/null, y eso mandaria error en la pagina.
-        // Si quieres arreglar esto, podrias mirar los temas de middleware para manejar condicionales de inicio de sesion.
         $user = Auth::user();
-        $publication = Publicacion::orderBy('date', 'desc')->take(3)->get();
+        $publications = $this->publicationService->getLatest(3);
 
-        // Aqui no use compact porque puedo asignar el nombre de la variable con los datos que quiero, entonces en este caso, el html esta recibiendo una variable llamada "$userData" con todos los datos del usuario que inicio sesion.
-        return view('principal.index', ['userData' => $user, 'publications' => $publication]);
+        return view('principal.index', [
+            'userData' => $user,
+            'publications' => $publications,
+        ]);
     }
+
     public function navBar()
     {
         $user = Auth::user();
         return view('principal.navbar', ['userData' => $user]);
     }
-
 }

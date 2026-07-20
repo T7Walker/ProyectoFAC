@@ -7,22 +7,16 @@
 
 <footer class="footer">
     <div class="footer-content">
-        <!-- Left Section: FAC -->
-        <div class="footer-left">
-            <h1 class="footer-logo">FAC</h1>
-        </div>
+        <!-- Botón en la esquina inferior izquierda -->
+        <a href="#" class="footer-btn">Botón</a>
 
-        <!-- Center Section: Contact Info -->
+        <!-- Centro: FAC + Email -->
         <div class="footer-center">
-            <h3>Contáctanos</h3>
-            <p>Email: contacto@tusitio.com</p>
-            <p>Teléfono: +57 123 456 789</p>
+            <h1 class="footer-logo">FAC</h1>
+            <p class="footer-email">contacto@tusitio.com</p>
         </div>
 
-        <!-- Right Section: Rights -->
-        <div class="footer-right">
-            <p>&copy; 2024 Forastero a ciudadano. Todos los derechos reservados.</p>
-            <p><a href="#">Política de Privacidad</a> | <a href="#">Términos de Uso</a></p>
-        </div>
+        <!-- Espacio vacío a la derecha para mantener el centro -->
+        <div class="footer-spacer"></div>
     </div>
 </footer>
