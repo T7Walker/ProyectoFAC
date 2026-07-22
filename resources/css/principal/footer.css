@@ -1,15 +1,19 @@
-/* Footer Styles - Versión simplificada */
-.footer {
-    background-color: #1c2544;
-    color: #32cd32;
-    padding: 14px 24px;
+/* Footer transparente */
+footer {
+    margin-top: auto;
+    padding: 20px;
+    background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    bottom: 0;
-    position: relative;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
 }
 
 .footer-content {

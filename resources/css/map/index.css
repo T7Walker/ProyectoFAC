@@ -10,14 +10,16 @@
 body,
 html {
     background-color: #1c2544;
-    height: 100%;
+    background-image: url("/storage/app/public/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    min-height: 100vh;
     margin: 0;
     display: flex;
     flex-direction: column;
     color: #fff;
-    padding: 20px;
-    position: sticky;
-    bottom: 0;
+    padding: 0;
 }
 
 body {
@@ -63,6 +65,62 @@ body {
     /* Altura mínima para no hacerse demasiado pequeño */
 }
 
+/* nuevo css para los contenedores
+button {
+  border: none;
+  display: block;
+  position: relative;
+  padding: 0.7em 2.4em;
+  font-size: 18px;
+  background: transparent;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+  color: royalblue;
+  z-index: 1;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+button span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: -1;
+  border: 4px solid royalblue;
+}
+
+button span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 8%;
+  height: 500%;
+  background: var(--lightgray);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-60deg);
+  transition: all 0.3s;
+}
+
+button:hover span::before {
+  transform: translate(-50%, -50%) rotate(-90deg);
+  width: 100%;
+  background: royalblue;
+}
+
+button:hover {
+  color: white;
+}
+
+button:active span::before {
+  background: #2751cd;
+}
+*/
+
 .map-container {
     border: 2px solid #ffffff;
     border-radius: 10px;
@@ -103,18 +161,59 @@ nav.contendor {
 }
 
 .map-controls button {
-    background-color: #3a4569;
-    padding: 10px 15px;
-    color: #fff;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    display: block;
+    position: relative;
+    padding: 0.7em 2.4em;
     font-size: 14px;
-    transition: background-color 0.3s;
+    background: transparent;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    color: white;
+    z-index: 1;
+    font-family: inherit;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+}
+
+.map-controls button span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    border: 2px solid white;
+}
+
+.map-controls button span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 8%;
+    height: 500%;
+    background: rgba(255, 255, 255, 0.3);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-60deg);
+    transition: all 0.3s;
+}
+
+.map-controls button:hover span::before {
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 100%;
+    background: rgba(255, 255, 255, 0.4);
 }
 
 .map-controls button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.map-controls button:active span::before {
+    background: rgba(255, 255, 255, 0.6);
 }
 
 

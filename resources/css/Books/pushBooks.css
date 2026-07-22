@@ -1,5 +1,8 @@
 body {
-    background-color: #1c2544;
+    background-image: url("/storage/app/public/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
     color: white;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -82,6 +85,11 @@ h1 {
     gap: 0.5rem;
     background-color: var(--clr-alpha);
     outline: 2px solid var(--bg-dark);
+    color: #ffffff;
+}
+
+.form input[type="text"]::placeholder {
+    color: #b0b8d0;
 }
 
 .form input[type="text"]:focus {
@@ -97,6 +105,7 @@ h1 {
 .form .submit {
     padding: 1rem 0.75rem;
     width: 100%;
+    max-width: 200px;
     align-items: center;
     gap: 0.5rem;
     border-radius: 3rem;
@@ -107,6 +116,9 @@ h1 {
     transition: all 300ms;
     font-weight: 600;
     font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 .form .submit:hover {

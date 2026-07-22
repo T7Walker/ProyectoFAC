@@ -57,35 +57,40 @@
             @endforeach
         @endif
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <h2 class="colorTitulo">¿Quiénes somos?</h2>
-    <br><br>
-
-    <div class="cards-container">
-        <div class="card">
-            <p class="card-p1">
-                Somos un grupo de programadores los cuales lanzamos un proyecto el cual te ayudará a integrarte a la
-                ciudad de Popayán.
-            </p>
-        </div>
+    
+    <!-- Lista de libros (clickeables) -->
+    <div class="contendor">
+        <h2 class="colorTitulo">Libros disponibles</h2>
     </div>
-
-    <br><br><br><br>
-
-    <h2 class="colorTitulo">¿Qué puedes encontrar en nuestra página?</h2>
-    <br>
-    <div class="cards-container">
-        <div class="card">
-            <p class="card-p2">
-                En nuestra página tenemos servicios que traen comodidad al integrarte a Popayán, como herramientas de
-                libros, publicaciones y mapas con rutas y zonas críticas.
-            </p>
-        </div>
+    <div class="books-list-container">
+        @if ($books->isEmpty())
+            <div class="contendor" style="text-align: center;">
+                <p style="color: #c8d0e0; font-size: 1rem;">No hay libros disponibles aún...</p>
+            </div>
+        @else
+            <div class="books-list">
+                @foreach ($books as $book)
+                    <a href="{{ $book->url }}" target="_blank" class="book-item">
+                        <span class="book-icon">📖</span>
+                        <span class="book-title">{{ $book->title }}</span>
+                    </a>
+                @endforeach
+            </div>
+        @endif
     </div>
+    <br>
+    <br>
 
+     <!-- apartado de informacion de que es FAC -->
+ 
+     <h2 class="colorTitulo">¿Que es FAC?</h2>
+     <div class="cards-container">
+         <div class="card" style="max-width: 800px; width: 90%;">
+             <p class="card-p2">
+                 Una nuestra página tenemos servicios que te hacen la vida mas facil a la hora de llegar a popayan, te ayudamos a guiarte con los buses, a encontrat oportunidad de trabajo y de nutrirte con los libros de nuestra comunidad, todo esto con el fin de que tu estadia en popayan sea mas facil y agradable.
+             </p>
+         </div>
+     </div>
     <br><br>
     <footer>
         @include('principal.footer')

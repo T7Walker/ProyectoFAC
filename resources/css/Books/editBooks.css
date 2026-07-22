@@ -1,4 +1,8 @@
 body {
+    background-image: url("/storage/app/public/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
     background-color: #1c2544;
     color: white;
     font-family: Arial, sans-serif;

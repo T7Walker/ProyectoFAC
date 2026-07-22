@@ -12,7 +12,7 @@
 
 <body>
     <nav>
-        @include ('principal.navBar')
+        @include('principal.navbar')
     </nav>
 
     <div class="ubication">
@@ -35,7 +35,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($books as $book)
+                @foreach ($libro as $book)
                     <tr>
                         <td>{{ $book->title }}
                         </td>

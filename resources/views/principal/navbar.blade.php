@@ -9,7 +9,7 @@
         'resources/js/Button/principal.js',
     ])
     <script>
-        const booksPage = "{{ route('Books.allBooks') }}";
+        const booksPage = "{{ route('Books.pushBook') }}";
         const mapPage = "{{ route('map.mainPage') }}";
         const publicationsPage = "{{ route('Publications.allPublication') }}";
         const indexPage = "{{ route('mainPage.index') }}"
@@ -26,17 +26,14 @@
 
             <div id="maps">
                 <img src="{{ asset('storage/I2bMcOZ.png') }}" alt="maps" class="buttonNav">
-                <p class="buttonNav-p">Mapa</p>
             </div>
 
             <div id="books">
                 <img src="{{ asset('storage/Ra0Sys9.png') }}" alt="Libros" class="buttonNav">
-                <p class="buttonNav-p">Libros</p>
             </div>
 
             <div id="publications">
                 <img src="{{ asset('storage/1OBqIVP.png') }}" alt="Post" class="buttonNav">
-                <p class="buttonNav-p">Posts</p>
             </div>
 
             <!-- Profile Section -->
